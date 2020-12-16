@@ -1,0 +1,51 @@
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom" color="dark">
+  <ion-tab-button tab="search">
+  <ion-icon name="paper"></ion-icon>
+  <ion-label>Feed</ion-label>
+  </ion-tab-button>
+  
+  <ion-tab-button tab="mywishlist">
+  <ion-icon name="send"></ion-icon>
+  <ion-label>Messages</ion-label>
+  </ion-tab-button>
+  
+  <ion-tab-button tab="notifications">
+  <ion-icon name="notifications"></ion-icon>
+  <ion-label>Contact</ion-label>
+  </ion-tab-button>
+  
+  <ion-tab-button tab="setting">
+  <ion-icon name="cog"></ion-icon>
+  <ion-label>Settings</ion-label>
+  </ion-tab-button>
+  
+  </ion-tab-bar>
+  </ion-tabs>
+
+  
+
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="../../assets/images/potrait.jpg" alt="">
+        <ion-label>
+          <h2>Mohd Safwan</h2>
+          <p>Patron</p>
+        </ion-label>
+      </div>
+      
+  <ion-list lines="none">
+    <ion-item>
+      <ion-icon name="search-circle"></ion-icon>Search
+    </ion-item>
+    <ion-item>
+      <ion-icon name="list-circle"></ion-icon>My Wishlist
+    </ion-item>
+  </ion-list>
+    <ion-router-outlet id="main"></ion-router-outlet>
+    </ion-content>
+  </ion-menu>

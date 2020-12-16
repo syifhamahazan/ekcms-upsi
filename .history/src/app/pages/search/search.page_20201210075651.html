@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>seaxxxxrch</ion-title> -->
+    <ion-button slot="start">
+      <ion-menu-button menu="main-menu" contentId="main"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="logo">  
+  <app-logo></app-logo>
+</div>
+
+<h5 class="ion-text-center">Web OPAC Search</h5>
+  <form id="form">
+    <app-search-input></app-search-input>
+    <ion-item>
+      <ion-input placeholder='Enter search keywords' types='text'></ion-input>
+    </ion-item>
+    <ion-button expand="block">Search</ion-button>
+    <div class="row">
+      <h2 class="heading">
+          Web OPAC Search
+      </h2>
+
+      <div class="search-wrapper">
+          
+      <div class="search-mn-button">
+          <div class="search-button">
+              <button id="opac-search-button" type="button" class="btn btn-primary" data-url="/Home/CatalogueGridIndex"><i class="zmdi zmdi-search"></i></button>
+          </div>
+          <div class="area-button">
+              <button id="search-area-button" type="button" class="btn btn-default" data-toggle="modal" data-target="#search-area-modal">Search by Area</button>
+          </div>
+          <div class="advanced-button">
+              <a href="/Home/AdvancedSearch" class="btn btn-success advanced-search">Advanced</a>
+          </div>
+          <div class="rbr-button">
+              <a href="/Home/RBRSearch" class="btn btn-info advanced-search">RBR</a>
+          </div>
+      </div>
+      </div>
+  </div>
+  </form>
+</ion-content>

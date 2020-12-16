@@ -1,0 +1,52 @@
+
+
+<ion-content class="ion-padding ion-text-center">
+<div class="logo">  
+  <app-logo></app-logo>
+</div>
+  <!-- <div class="form">
+    <ion-item>
+      <ion-input placeholder='Enter Email'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder='Password' types='password'></ion-input>
+    </ion-item>
+    <ion-button colors='dark' expands='block' (click)="login()">Login</ion-button>
+  </div> -->
+  <form>
+    <ion-list>
+      <ion-item>
+      <ion-label position="stacked">Username</ion-label>
+      <ion-input autocomplete="off" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+      <ion-label position="stacked">Password</ion-label>
+      <ion-input autocomplete="off" type="password"></ion-input>
+      </ion-item>
+     
+    </ion-list>
+      <!-- <ion-button expand="block" (click)="login()">Login</ion-button> -->
+      <ion-button  expands='block' routerLink='/signup'>Submit</ion-button>
+  </form>
+  
+
+ 
+
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom" color="ekcms" class="ion-text-color">
+
+      <ion-tab-button tab="search" routerLink='/forgot'>
+        <ion-icon name="alert-circle-outline"></ion-icon>
+          <ion-label>FORGOT USERNAME</ion-label>
+        </ion-tab-button>
+      
+      <ion-tab-button tab="mywishlist" routerLink='/signup'>
+        <ion-icon name="person-add-outline"></ion-icon>
+        <ion-label>NEW REGISTRATION</ion-label>
+      </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
+  </ion-content>

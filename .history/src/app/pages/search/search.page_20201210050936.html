@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title>seaxxxxrch</ion-title> -->
+    <ion-button slot="start">
+      <ion-menu-button menu="main-menu" contentId="main"></ion-menu-button>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<div class="logo">  
+  <app-logo></app-logo>
+</div>
+
+<h5 class="ion-text-center">Web OPAC Search</h5>
+  <form id="form">
+    <app-search-input></app-search-input>
+    <ion-item>
+      <ion-input placeholder='Enter search keywords' types='text'></ion-input>
+    </ion-item>
+    <ion-button expand="block" shape="round">Search</ion-button>
+  </form>
+</ion-content>
