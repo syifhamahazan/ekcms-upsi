@@ -9,6 +9,12 @@ import { WelcomePageRoutingModule } from './welcome-routing.module';
 import { WelcomePage } from './welcome.page';
 import { ComponentsModule } from 'src/app/components/components.module';
 
+const routes: Routes = [
+  {
+  path: '',
+  component: WelcomePage
+  }
+  ];
 @NgModule({
   imports: [
     CommonModule,
