@@ -9,6 +9,5 @@ export class SearchInputComponent {
 
     @Input() type: string;
     @Input() placeholder: string;
-  
     constructor() {}
   }

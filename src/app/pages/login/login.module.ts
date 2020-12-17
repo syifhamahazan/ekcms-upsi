@@ -8,7 +8,7 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 import { ComponentsModule } from 'src/app/components/components.module';
-import { SearchbyareaComponent } from 'src/app/components/modals/searchbyarea/searchbyarea.component';
+// import { SearchbyareaComponent } from 'src/app/components/modals/searchbyarea/searchbyarea.component';
 
 @NgModule({
   imports: [
@@ -16,8 +16,8 @@ import { SearchbyareaComponent } from 'src/app/components/modals/searchbyarea/se
     FormsModule,
     IonicModule,
     LoginPageRoutingModule,
-    ComponentsModule,
-    SearchbyareaComponent
+    ComponentsModule
+    // SearchbyareaComponent
   ],
   declarations: [LoginPage]
 })

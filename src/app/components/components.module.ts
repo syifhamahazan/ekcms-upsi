@@ -7,11 +7,11 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { SearchInputComponent } from './search-input/search-input.component';
-import { SearchbyareaComponent } from './modals/searchbyarea/searchbyarea.component'
+import { SearchbyareaComponent } from './modals/searchbyarea/searchbyarea.component';
 
 @NgModule({
   declarations: [SlidesComponent, StartComponent, LogoComponent, SearchInputComponent, SearchbyareaComponent],
-  exports:[SlidesComponent, StartComponent, LogoComponent, SearchInputComponent, SearchbyareaComponent],
+  exports: [SlidesComponent, StartComponent, LogoComponent, SearchInputComponent, SearchbyareaComponent],
   imports: [
     CommonModule,
     FormsModule,

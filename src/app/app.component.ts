@@ -28,7 +28,7 @@ export class AppComponent {
   }
 
   backButtonEvent(){
-    this.platform.backButton.subscribeWithPriority(10, () =>{
+    this.platform.backButton.subscribeWithPriority(10, () => {
       this.backButtonAlert();
     });
   }
@@ -40,8 +40,8 @@ export class AppComponent {
         message: 'This is an alert message.',
         buttons: ['OK']
       });
-    
+
       await alert.present();
-    
+
   }
 }
