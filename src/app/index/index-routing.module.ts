@@ -7,9 +7,9 @@ const routes: Routes = [
   {
     path: '',
     component: IndexPage,
-    children:[
+    children: [
       {
-        path:'',
+        path: '',
         children: [
           {
             path: '',
@@ -35,14 +35,14 @@ const routes: Routes = [
               import('../pages/forgot/forgot.module').then(
                 m => m.ForgotPageModule )
            }
-          
-        ] 
-     
-      } 
+
+        ]
+
+      }
     ]
   }
 ];
-  
+
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
