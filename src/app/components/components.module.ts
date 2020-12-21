@@ -10,8 +10,8 @@ import { SearchInputComponent } from './search-input/search-input.component';
 import { SearchbyareaComponent } from './modals/searchbyarea/searchbyarea.component';
 
 @NgModule({
-  declarations: [SlidesComponent, StartComponent, LogoComponent, SearchInputComponent, SearchbyareaComponent],
-  exports: [SlidesComponent, StartComponent, LogoComponent, SearchInputComponent, SearchbyareaComponent],
+  declarations: [SlidesComponent, StartComponent, LogoComponent, SearchbyareaComponent],
+  exports: [SlidesComponent, StartComponent, LogoComponent, SearchbyareaComponent],
   imports: [
     CommonModule,
     FormsModule,
