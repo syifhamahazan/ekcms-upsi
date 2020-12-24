@@ -30,16 +30,16 @@ export class LoginPage implements OnInit {
   }
 
   loginAction(){
-  //  this.router.navigate(['./home/search']);
+   this.router.navigate(['./home/search']);
   // alert('hello');
-  if (this.validateInput()){
-    // this.authService.login(this.postData).subscribe([res: any] =>{
+  // if (this.validateInput()){
+  //   // this.authService.login(this.postData).subscribe([res: any] =>{
 
-    // })
-  }else{
+  //   // })
+  // }else{
 
-    console.log('Please give some information');
-  }
+  //   console.log('Please give some information');
+  // }
   }
 
 }
