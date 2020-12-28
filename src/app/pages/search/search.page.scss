@@ -48,5 +48,14 @@ ion-content{
 .search-button{
     --background: #0067A7;
 }
+ion-menu-button{
+    background: none !important;
+    background-color: none !important;
+    box-shadow: none !important;
+  }
 
+ion-icon{
+    font-size: 30px;
+    padding-top: 12px;
+}
 
