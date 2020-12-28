@@ -14,6 +14,14 @@ const routes: Routes = [
   {
     path: 'search-result',
     loadChildren: () => import('./pages/search-result/search-result.module').then( m => m.SearchResultPageModule)
+  },
+  {
+    path: 'advance-search',
+    loadChildren: () => import('./pages/advance-search/advance-search.module').then( m => m.AdvanceSearchPageModule)
+  },
+  {
+    path: 'rbr-search',
+    loadChildren: () => import('./pages/rbr-search/rbr-search.module').then( m => m.RbrSearchPageModule)
   }
 ];
 @NgModule({

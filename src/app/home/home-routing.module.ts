@@ -15,10 +15,10 @@ const routes: Routes = [
             m => m.SearchPageModule)
       },
       {
-        path: 'mywishlist',
+        path: 'search-result',
         loadChildren: () =>
-          import('../pages/mywishlist/mywishlist.module').then(
-            m => m.MywishlistPageModule)
+          import('../pages/search-result/search-result.module').then(
+            m => m.SearchResultPageModule)
       }
     ]
   }
