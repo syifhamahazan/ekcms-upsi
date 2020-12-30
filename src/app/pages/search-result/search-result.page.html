@@ -1,9 +1,65 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="login"></ion-back-button>
+    </ion-buttons>
     <ion-title>search-result</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="title ion-padding font-bold">
+    <h5>Search Results for "islam"</h5>
+    <p>Total 33 results</p>
+  </div>
+  <ion-grid fixed>
+    <ion-row class="header-row" scrollable>
+      <ion-col>
+        Cover
+      </ion-col>
+      <ion-col>
+        Title
+      </ion-col>
+      <ion-col>
+        Author
+      </ion-col>
+      <ion-col class="ion-hide-lg-down">
+        Call Number
+      </ion-col>
+      <ion-col class="ion-hide-lg-down">
+        Publication Year
+      </ion-col>
+      <ion-col>
+        Available
+      </ion-col>
+    </ion-row>
+    <ion-row class="res" *ngFor="let book of books">
+      <ion-col>
+        <img src="{{ book.cover }}" />
+      </ion-col>
+      <ion-col>
+        <h4>{{ book.title }}</h4>
+      </ion-col>
+      <ion-col>
+        <h4>{{ book.author }}</h4>
+      </ion-col>
+      <ion-col class="ion-hide-lg-down">
+        <h4>{{ book.call_no }}</h4>
+      </ion-col>
+      <ion-col class="ion-hide-lg-down">
+        <h4>{{ book.pyear }}</h4>
+      </ion-col>
+      <ion-col>
+        <h4>{{ book.available }}</h4>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
 </ion-content>
+
+  
+
+    
+  
+    
+

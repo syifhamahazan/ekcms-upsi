@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultsService } from '../../services/results.service';
 
 @Component({
   selector: 'app-search-result',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-result.page.scss'],
 })
 export class SearchResultPage implements OnInit {
+  public books = [];
 
-  constructor() { }
+  constructor(
+    private data: ResultsService,
+  ) { }
 
   ngOnInit() {
+    this.books = this.data.getBooks();
   }
 
 }

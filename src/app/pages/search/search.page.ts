@@ -15,8 +15,8 @@ export class SearchPage implements OnInit {
   ngOnInit() {
   }
 
-  search(){
-  this.router.navigate(['./home/search']);
+  searchAction(){
+  this.router.navigate(['./home/search-result']);
   //  alert('hello');
  }
 
