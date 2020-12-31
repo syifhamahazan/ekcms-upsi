@@ -1,22 +1,9 @@
 
 
 <ion-content class="ion-padding ion-text-center">
-  <ion-tabs>
-
-    <ion-tab-bar slot="bottom" class="ion-text-color">
-
-      <ion-tab-button tab="search" routerLink='/forgot'>
-        <ion-icon name="alert-circle-outline"></ion-icon>
-          <ion-label>FORGOT USERNAME</ion-label>
-        </ion-tab-button>
-      
-      <ion-tab-button tab="mywishlist" routerLink='/signup'>
-        <ion-icon name="person-add-outline"></ion-icon>
-        <ion-label>NEW REGISTRATION</ion-label>
-      </ion-tab-button>
-
-      </ion-tab-bar>
-    </ion-tabs>
+  <!-- <ion-toolbar>
+    <ion-menu-button contentId="main" slot="start"><ion-icon src="../../../assets/icon/menucircle.svg"></ion-icon></ion-menu-button>      
+</ion-toolbar> -->
   <div class="logo">  
   <app-logo></app-logo>
 </div>
@@ -41,25 +28,29 @@
         <ion-input autocomplete="off" type="password" name="password"></ion-input>
       </ion-item>
      
-      <ion-item>
-        <ion-label position="floating">Authorised as</ion-label>
-          <ion-select ok-text="Okay" cancel-text="Cancel">
-            <ion-select-option value="010">010</ion-select-option>
-            <ion-select-option value="011">011</ion-select-option>
-            <ion-select-option value="020">020</ion-select-option>
-            <ion-select-option value="023">023</ion-select-option>
-            <ion-select-option value="025">025</ion-select-option>
-            <ion-select-option value="033">033</ion-select-option>
-            <ion-select-option value="040">040</ion-select-option>
-          </ion-select>
-      
-      </ion-item>
     </ion-list>
     <div class="button-container">
       <ion-button expand="block" (click)="loginAction()" class="main-button">Login<span>&#10230;</span></ion-button>
     </div>
   </div>
+  <ion-tabs>
+
+    <ion-tab-bar slot="bottom" class="ion-text-color">
+
+      <ion-tab-button tab="search" routerLink='/forgot'>
+        <ion-icon name="alert-circle-outline"></ion-icon>
+          <ion-label>FORGOT USERNAME</ion-label>
+        </ion-tab-button>
+      
+      <ion-tab-button tab="mywishlist" routerLink='/signup'>
+        <ion-icon name="person-add-outline"></ion-icon>
+        <ion-label>NEW REGISTRATION</ion-label>
+      </ion-tab-button>
+
+      </ion-tab-bar>
+    </ion-tabs>
 </ion-content>
+
 
  
 

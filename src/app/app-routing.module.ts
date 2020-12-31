@@ -22,6 +22,46 @@ const routes: Routes = [
   {
     path: 'rbr-search',
     loadChildren: () => import('./pages/rbr-search/rbr-search.module').then( m => m.RbrSearchPageModule)
+  },
+  {
+    path: 'myloanhistory',
+    loadChildren: () => import('./pages/myloanhistory/myloanhistory.module').then( m => m.MyloanhistoryPageModule)
+  },
+  {
+    path: 'myreservation',
+    loadChildren: () => import('./pages/myreservation/myreservation.module').then( m => m.MyreservationPageModule)
+  },
+  {
+    path: 'myoverdues',
+    loadChildren: () => import('./pages/myoverdues/myoverdues.module').then( m => m.MyoverduesPageModule)
+  },
+  {
+    path: 'mysearchhistory',
+    loadChildren: () => import('./pages/mysearchhistory/mysearchhistory.module').then( m => m.MysearchhistoryPageModule)
+  },
+  {
+    path: 'login-auth',
+    loadChildren: () => import('./pages/login-auth/login-auth.module').then( m => m.LoginAuthPageModule)
+  },
+  {
+    path: 'myprofile',
+    loadChildren: () => import('./pages/myprofile/myprofile.module').then( m => m.MyprofilePageModule)
+  },
+  {
+    path: 'bookdetails',
+    loadChildren: () => import('./pages/bookdetails/bookdetails.module').then( m => m.BookdetailsPageModule)
+  },
+  {
+    path: 'reservation',
+    loadChildren: () => import('./pages/reservation/reservation.module').then( m => m.ReservationPageModule)
+  },
+  {
+    path: 'myloanrenew',
+    loadChildren: () => import('./pages/myloanrenew/myloanrenew.module').then( m => m.MyloanrenewPageModule)
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule)
   }
 ];
 @NgModule({

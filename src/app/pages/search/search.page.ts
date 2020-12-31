@@ -28,4 +28,11 @@ export class SearchPage implements OnInit {
 //   await modal.present();
 //  }
 
+advSearch(){
+  this.router.navigate(['./home/advance-search']);
+}
+
+rbrSearch(){
+  this.router.navigate(['./home/rbr-search']);
+}
 }

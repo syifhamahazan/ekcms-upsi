@@ -1,0 +1,44 @@
+ion-header{
+    --ion-background-color:#F2F2F2;
+}
+ion-content {
+    --padding-top: 16px;
+    --padding-bottom: 16px;
+    --padding-start: 26px;
+    --padding-end: 26px;
+}
+
+
+.cart-total {
+    ion-item {
+        --padding-start: 0;
+        --inner-padding-end: 0;
+
+        ion-label {
+            margin-right: 0;
+        }
+
+        ion-label:nth-child(1) {
+            color: #919191;
+        }
+
+        ion-label:nth-child(2) {
+            color: #434343;
+        }
+    }
+}
+
+.title {
+
+    font-size: xx-large;
+    h2 {
+        margin: 0 0 0 16px;
+        color: #434343;
+    }
+
+    // ion-button {
+    //     margin: 0 16px 0 0;
+    //     color: #656565;
+    //     width: 50%;
+    // }
+}

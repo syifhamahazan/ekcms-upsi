@@ -1,0 +1,170 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home/search-result" class="backbtn"></ion-back-button>
+    </ion-buttons>
+    <h3>BOOK'S DETAILS</h3>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <img src="../../../assets/images/book1.jpg" />
+
+  <div class="ion-padding-vertical">
+    <h1 class="item-name">The Basics of Islamic finance fundamentals with applications in Malaysia</h1>
+
+    <h4 class="price">
+      Sabariah Nordin
+    </h4>
+  </div>
+  <div class="seperator">
+    <hr>
+  </div>
+  <div class="review">
+    <ion-row>
+      <ion-col size="6">
+        <div class="rating">
+          4.5
+        </div>
+
+        Very Good
+      </ion-col>
+      <ion-col size="6">
+        <div class="count">49 Comments</div>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="seperator">
+    <hr>
+  </div>
+
+  <div class="description">
+    <h5>Description</h5>
+
+    <p>
+      A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.
+    </p>
+
+  </div>
+
+  <div class="seperator">
+    <hr>
+  </div>
+
+  <div class="variation">
+    <ion-segment (ionChange)="segmentChanged($event)" value="size">
+      <ion-segment-button value="size">
+        <ion-label>Details</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="color">
+        <ion-label>Availability</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+<ion-grid class="sizes">
+  <ion-row>
+    <ion-col offset-4>
+      <div>Author</div>
+    </ion-col>
+    <ion-col>
+      <div>Sabariah Nordin.</div>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col offset-4>
+      <div>ISBN</div>
+    </ion-col>
+    <ion-col>
+      <div>9789670876733</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>
+      <div>Publisher</div>
+    </ion-col>
+    <ion-col>
+      <div>Penerbit Universiti Utara Malaysia</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>
+      <div>Call Number</div>
+    </ion-col>
+    <ion-col>
+      <div>BP158.B9.S113B 2016 SAB</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>
+      Physical Description    </ion-col>
+    <ion-col>
+      <div>xiii, 90 p.</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>
+      <div>Subject</div>
+    </ion-col>
+    <ion-col>
+      <div>Finance-- Religious aspects-- Islam.
+        Banks and banking-- Religious aspects-- Islam.</div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+<ion-grid class="colors">
+  <ion-row>
+    <ion-col offset-4>
+      <div>Accession No</div>
+    </ion-col>
+    <ion-col>
+      <div>Sabariah Nordin.</div>
+    </ion-col>
+  </ion-row>
+  
+  <ion-row>
+    <ion-col offset-4>
+      <div>Volume</div>
+    </ion-col>
+    <ion-col>
+      <div>9789670876733</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>
+      <div>Copy</div>
+    </ion-col>
+    <ion-col>
+      <div>Penerbit Universiti Utara Malaysia</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>
+      <div>Due Date</div>
+    </ion-col>
+    <ion-col>
+      <div>BP158.B9.S113B 2016 SAB</div>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col offset-4>Status   </ion-col>
+    <ion-col>
+      <div>xiii, 90 p.</div>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<div class="button-container">
+  <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
+</div>
+
+</ion-content>

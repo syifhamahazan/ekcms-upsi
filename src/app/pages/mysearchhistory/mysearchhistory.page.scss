@@ -1,0 +1,29 @@
+
+
+
+
+.col{
+    border: 1px solid black;
+ }
+
+ ion-row.res {
+    border-bottom: 1px solid #434343;
+
+    ion-col{
+        margin: 4px;
+        padding: 8px;
+        color: #6A6262;
+        font-size: small;
+        
+    }
+}
+
+// ion-content{
+
+//     --ion-background-color:#F2F2F2;
+// }
+
+.header-row{
+    font-weight: 500;
+    border-bottom: 2px solid #000;
+}

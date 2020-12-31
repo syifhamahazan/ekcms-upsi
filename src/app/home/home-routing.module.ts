@@ -19,7 +19,55 @@ const routes: Routes = [
         loadChildren: () =>
           import('../pages/search-result/search-result.module').then(
             m => m.SearchResultPageModule)
-      }
+      },
+      {
+        path: 'advance-search',
+        loadChildren: () => import('../pages/advance-search/advance-search.module').then( m => m.AdvanceSearchPageModule)
+      },
+      {
+        path: 'rbr-search',
+        loadChildren: () => import('../pages/rbr-search/rbr-search.module').then( m => m.RbrSearchPageModule)    
+      },
+      {
+        path: 'mywishlist',
+        loadChildren: () => import('../pages/mywishlist/mywishlist.module').then( m => m.MywishlistPageModule)    
+      },
+      {
+        path: 'myprofile',
+        loadChildren: () => import('../pages/myprofile/myprofile.module').then( m => m.MyprofilePageModule)
+      },
+      {
+        path: 'bookdetails',
+        loadChildren: () => import('../pages/bookdetails/bookdetails.module').then( m => m.BookdetailsPageModule)
+      },
+      {
+        path: 'reservation',
+        loadChildren: () => import('../pages/reservation/reservation.module').then( m => m.ReservationPageModule)
+      },
+      {
+        path: 'myloanrenew',
+        loadChildren: () => import('../pages/myloanrenew/myloanrenew.module').then( m => m.MyloanrenewPageModule)
+      },
+      {
+        path: 'myreservation',
+        loadChildren: () => import('../pages/myreservation/myreservation.module').then( m => m.MyreservationPageModule)
+      },
+      {
+        path: 'myloanhistory',
+        loadChildren: () => import('../pages/myloanhistory/myloanhistory.module').then( m => m.MyloanhistoryPageModule)
+      },
+      {
+        path: 'myoverdues',
+        loadChildren: () => import('../pages/myoverdues/myoverdues.module').then( m => m.MyoverduesPageModule)
+      },
+      {
+        path: 'mysearchhistory',
+        loadChildren: () => import('../pages/mysearchhistory/mysearchhistory.module').then( m => m.MysearchhistoryPageModule)
+      },
+      {
+       path: 'logout',
+       loadChildren: () => import('../pages/logout/logout.module').then( m => m.LogoutPageModule)
+     }
     ]
   }
 

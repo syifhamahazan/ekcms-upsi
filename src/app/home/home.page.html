@@ -31,7 +31,7 @@
     <ion-content>
       <div class="menu-header-bg"></div>
       <div class="header-content">
-        <img src="../../assets/images/potrait.jpg" alt="">
+        <img src="../../assets/images/potrait.jpg" alt="" (click)="myprofile()">
         <ion-label>
           <h2>Mohd Safwan</h2>
           <p>Patron</p>
@@ -39,25 +39,28 @@
       </div>
       
   <ion-list class="menu-items" lines="none">
-    <ion-item class="active">
-      <ion-icon name="search-circle"></ion-icon>Search
+    <ion-item (click)="serachField()"  class="active">
+      <ion-icon name="search-circle" ></ion-icon>Search
     </ion-item>
-    <ion-item>
+    <ion-item (click)="mywishlist()">
       <ion-icon name="list-circle"></ion-icon>My Wishlist
     </ion-item>
-    <ion-item>
+    <ion-item (click)="myloan()">
+      <ion-icon name="wallet-outline"></ion-icon>My Loan/Renew
+    </ion-item>
+    <ion-item (click)="myloanhist()">
       <ion-icon name="file-tray-full"></ion-icon>My Loan History
     </ion-item>
-    <ion-item>
+    <ion-item (click)="myrsv()">
       <ion-icon name="book"></ion-icon>My Reservation
     </ion-item>
-    <ion-item>
+    <ion-item (click)="myoverdues()">
       <ion-icon name="today"></ion-icon>My Overdues
     </ion-item>
-    <ion-item>
+    <ion-item (click)="mysearchhist()">
       <ion-icon name="library"></ion-icon>My Search History
     </ion-item>
-    <ion-item>
+    <ion-item (click)="logoutAction()">
       <ion-icon name="log-out"></ion-icon>Logout
     </ion-item>
   </ion-list>

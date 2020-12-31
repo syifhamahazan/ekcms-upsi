@@ -1,9 +1,33 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>rbr-search</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-
+  <ion-toolbar>
+      <ion-menu-button contentId="main" slot="start"><ion-icon src="../../../assets/icon/menucircle.svg"></ion-icon></ion-menu-button>      
+  </ion-toolbar>
+<div class="ion-text-center web-opac">  
+  <img src="../../../assets/images/upsi-logo.png"/>
+  <h5 class="ion-text-center" color="ekcms">RBR SEARCH</h5>
+</div>
+  <form id="form">
+    <ion-item>
+      <ion-label position="floating">Filter By</ion-label>
+        <ion-select ok-text="Okay" cancel-text="Cancel">
+          <ion-select-option value="title">Lecturer Name</ion-select-option>
+          <ion-select-option value="author">Course Name</ion-select-option>
+        </ion-select>
+    
+    </ion-item>
+    <div class="search">
+    <ion-item>
+      <ion-input placeholder='Enter keywords' types='text'></ion-input>
+    </ion-item> 
+    </div>
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-col>
+          <div>
+            <ion-button expand="block" class="search-button" click="openModal()">Search</ion-button>
+          </div>
+        </ion-col>
+       </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>

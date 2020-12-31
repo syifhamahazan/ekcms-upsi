@@ -1,0 +1,50 @@
+
+<ion-content class="ion-padding ion-text-center">
+  <div class="logo">  
+  <img src="../../../assets/images/ekcms.png" alt="">
+</div>
+  <!-- <div class="form">
+    <ion-item>
+      <ion-input placeholder='Enter Email'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input placeholder='Password' types='password'></ion-input>
+    </ion-item>
+    <ion-button colors='dark' expands='block' (click)="login()">Login</ion-button>
+  </div> -->
+  <div class="form-container">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input autocomplete="off" type="text" name="username"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input autocomplete="off" type="password" name="password"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="floating">Authorization codes</ion-label>
+          <ion-select ok-text="Okay" cancel-text="Cancel">
+            <ion-select-option value="010">010</ion-select-option>
+            <ion-select-option value="011">011</ion-select-option>
+            <ion-select-option value="020">020</ion-select-option>
+            <ion-select-option value="023">023</ion-select-option>
+            <ion-select-option value="025">025</ion-select-option>
+            <ion-select-option value="033">033</ion-select-option>
+            <ion-select-option value="040">040</ion-select-option>
+          </ion-select>
+      
+      </ion-item>
+    </ion-list>
+    <div class="button-container">
+      <ion-button expand="block" (click)="loginAction()" class="main-button">Login<span>&#10230;</span></ion-button>
+    </div>
+  </div>
+</ion-content>
+
+ 
+
+
+ 
