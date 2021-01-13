@@ -7,8 +7,8 @@
 // };
 
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost:3562/'
+  production: true,
+  apiUrl: 'http://api.ekcms.com/'
   };
 
 /*

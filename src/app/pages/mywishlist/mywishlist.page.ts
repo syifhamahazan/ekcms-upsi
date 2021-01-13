@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-mywishlist',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MywishlistPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalContoller: ModalController) { }
 
+  async openModel(){
+  }
   ngOnInit() {
   }
 
