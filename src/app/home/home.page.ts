@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.page.html',
@@ -8,7 +9,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router: Router, public alertController: AlertController) { }
+  constructor(private router: Router, public alertController: AlertController, private authService: AuthService) { }
 
   ngOnInit() {
   }
@@ -59,14 +60,14 @@ export class HomePage implements OnInit {
         }, {
           text: 'Yes',
           handler: () => {
-            this.router.navigate(['./login']);
-          }
+            this.authService.logout();
         }
+      }
       ]
     });
-  
+
     await alert.present();
-    let result = await alert.onDidDismiss();
+    const result = await alert.onDidDismiss();
     console.log(result);
   }
 }

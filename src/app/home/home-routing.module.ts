@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeGuard } from '../guards/home.guard';
 
 import { HomePage } from './home.page';
 
@@ -7,6 +8,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePage,
+    canActivate: [HomeGuard],
     children: [
       {
         path: 'search',
@@ -26,11 +28,11 @@ const routes: Routes = [
       },
       {
         path: 'rbr-search',
-        loadChildren: () => import('../pages/rbr-search/rbr-search.module').then( m => m.RbrSearchPageModule)    
+        loadChildren: () => import('../pages/rbr-search/rbr-search.module').then( m => m.RbrSearchPageModule)
       },
       {
         path: 'mywishlist',
-        loadChildren: () => import('../pages/mywishlist/mywishlist.module').then( m => m.MywishlistPageModule)    
+        loadChildren: () => import('../pages/mywishlist/mywishlist.module').then( m => m.MywishlistPageModule)
       },
       {
         path: 'myprofile',

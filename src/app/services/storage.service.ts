@@ -12,6 +12,7 @@ export class StorageService {
   // Store the value
   async store(storageKey: string, value: any) {
 
+  // btoa encrypted key
     const encryptedValue = btoa(escape(JSON.stringify(value)));
     await Storage.set({
       key: storageKey,

@@ -16,6 +16,7 @@ export class AuthService {
     private router: Router
   ) { }
 
+  // Observable like promises for rxjs
   login(postData: any): Observable<any>{
     return this.httpService.post('login', postData);
   }
@@ -25,8 +26,10 @@ export class AuthService {
   }
 
   logout(){
+    // get the userdatakey using AUTH
+    // do it in promise way since sometimes it may take time
     this.storageService.removeItem(AuthConstants.AUTH).then(res => {
-    this.router.navigate(['']);
+    this.router.navigate(['/login']);
   });
 
 }

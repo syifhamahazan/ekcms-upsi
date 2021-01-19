@@ -32,7 +32,7 @@ app.post('/login', function(req, res, next) {
     let data = JSON.parse(req.body);
     let username = data.username;
     let password = data.password;
-    if (username === 'srinivas' && password === '9lessons') {
+    if (username === 'syifha' && password === '123456') {
       return res.status(200).json(mock.userData);
     } else {
       return res

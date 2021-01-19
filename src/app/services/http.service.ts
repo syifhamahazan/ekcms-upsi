@@ -7,13 +7,14 @@ import { environment } from '../../environments/environment';
 })
 export class HttpService {
 
-    headers = new HttpHeaders();
-    options = { header: this.headers, withCredintials: false };
+  constructor(private http: HttpClient) {}
 
-    constructor(private http: HttpClient) {}
+  post(serviceName: string, data: any) {
+    const headers = new HttpHeaders();
+    const options = { header: headers, withCredintials: false };
 
-    post(serviceName: string, data: any) {
     const url = environment.apiUrl + serviceName;
-    return this.http.post(url, JSON.stringify(data), this.options);
+
+    return this.http.post(url, JSON.stringify(data), options);
   }
 }
