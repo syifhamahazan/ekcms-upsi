@@ -9,9 +9,14 @@ import { AuthService } from '../services/auth.service';
 })
 export class HomePage implements OnInit {
 
+  displayUserData: any;
+
   constructor(private router: Router, public alertController: AlertController, private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.userData$.subscribe((res: any) => {
+      this.displayUserData = res;
+    });
   }
   searchAction(){
     this.router.navigate(['./home/search-result']);
