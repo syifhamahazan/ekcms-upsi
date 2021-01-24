@@ -12,6 +12,7 @@ import { ToastService } from 'src/app/services/toast.service';
 })
 export class LoginPage implements OnInit {
   public postData = {
+    grant_type: 'password',
     username: '',
     password: ''
   };
@@ -30,16 +31,18 @@ export class LoginPage implements OnInit {
     const username = this.postData.username.trim();
     const password = this.postData.password.trim();
 
-    return (this.postData.username && this.postData.password && username.length > 0 && password.length > 0);
+    return (this.postData.username && this.postData.password && username.length > 0 && password.length > 0 && this.postData.grant_type);
   }
 
   loginAction(){
   if (this.validateInputs()) {
     this.authService.login(this.postData).subscribe((res: any) => {
+      console.log('Done validate');
+      console.log(res);
       // userData depend on name in API
-      if (res.userData) {
+      if (res) {
         // Storing the User data.
-        this.storageService.store(AuthConstants.AUTH, res.userData);
+        this.storageService.store(AuthConstants.AUTH, res.access_token);
         this.router.navigate(['./home/search']);
       } else {
         this.toastService.presentToast('Incorrect username and password');
