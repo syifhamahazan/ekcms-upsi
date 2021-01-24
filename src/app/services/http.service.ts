@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
 @Injectable({
@@ -9,12 +9,21 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
 
-  post(serviceName: string, data: any) {
-    const headers = new HttpHeaders();
-    const options = { header: headers, withCredintials: false };
+   post(serviceName: string, data: any) {
+  //   const headers = new HttpHeaders({
+  //     'Content-Type': 'application/x-www-form-urlencoded'
+  //  });
+  const body = new HttpParams()
+  .set(`grant_type`, data.grant_type)
+  .set(`username`, data.username)
+  .set(`password`, data.password);
+  const apiHeaders = {'Content-Type': 'application/x-www-form-urlencoded'
+};
 
-    const url = environment.apiUrl + serviceName;
+    // const options = { header: headers };
 
-    return this.http.post(url, JSON.stringify(data), options);
+  const url = environment.apiUrl + serviceName;
+  console.log(apiHeaders, data);
+  return this.http.post(url, body.toString(), {headers: apiHeaders, withCredintials: true });
   }
 }

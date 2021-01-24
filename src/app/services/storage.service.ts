@@ -24,6 +24,8 @@ export class StorageService {
   async get(storageKey: string){
     // tslint:disable-next-line: no-shadowed-variable
     const res = await Storage.get({ key: storageKey });
+    console.log('I am in storage');
+    console.log(res);
     if (res.value){
       return JSON.parse(unescape(atob(res.value)));
     }

@@ -21,7 +21,8 @@ export class AuthService {
   getUserData(){
     // connect to storage service
     this.storageService.get(AuthConstants.AUTH).then(res => {
-      // console.log(res);
+      console.log('Iam in getuserdata');
+      console.log(res);
       this.userData$.next(res);
     });
   }
