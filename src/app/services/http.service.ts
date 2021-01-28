@@ -17,8 +17,7 @@ export class HttpService {
   .set(`grant_type`, data.grant_type)
   .set(`username`, data.username)
   .set(`password`, data.password);
-  const apiHeaders = {'Content-Type': 'application/x-www-form-urlencoded'
-};
+  const apiHeaders = {'Content-Type': 'application/x-www-form-urlencoded'};
 
     // const options = { header: headers };
 
@@ -26,4 +25,20 @@ export class HttpService {
   console.log(apiHeaders, data);
   return this.http.post(url, body.toString(), {headers: apiHeaders, withCredintials: true });
   }
+
+  getProfile(serviceName: string, data: any) {
+    console.log(data.token);
+    const apiHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'Authorization',
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + data.token
+    };
+    const param = new HttpParams()
+    .set(`AccessionNo`, data.AccessionNo);
+    const url = environment.apiUrl + serviceName;
+    console.log (url);
+    return this.http.get(url, { headers: apiHeaders , params: param  });
+    }
 }

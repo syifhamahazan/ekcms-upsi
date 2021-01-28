@@ -17,7 +17,9 @@ export class HomePage implements OnInit {
     this.authService.userData$.subscribe((res: any) => {
       this.displayUserData = res;
     });
+
   }
+
   searchAction(){
     this.router.navigate(['./home/search-result']);
     //  alert('hello');

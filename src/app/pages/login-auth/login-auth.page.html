@@ -16,17 +16,17 @@
     <ion-list>
       <ion-item>
         <ion-label position="floating">Email</ion-label>
-        <ion-input autocomplete="off" type="email" name="Email"></ion-input>
+        <ion-input autocomplete="off" type="email" name="Email"  [(ngModel)]="postData.username"></ion-input>
       </ion-item>
       
       <ion-item>
         <ion-label position="floating">Password</ion-label>
-        <ion-input autocomplete="off" type="password" name="password"></ion-input>
+        <ion-input autocomplete="off" type="password" name="password" [(ngModel)]="postData.password"></ion-input>
       </ion-item>
      
       <ion-item>
         <ion-label position="floating">Organisation code</ion-label>
-          <ion-select ok-text="Okay" cancel-text="Cancel">
+          <ion-select [(ngModel)]="qty" ok-text="Okay" cancel-text="Cancel">
             <ion-select-option value="010">010</ion-select-option>
             <ion-select-option value="011">011</ion-select-option>
             <ion-select-option value="020">020</ion-select-option>
@@ -39,7 +39,7 @@
       </ion-item>
     </ion-list>
     <div class="button-container">
-      <ion-button expand="block" (click)="loginAction()" class="main-button">Login<span>&#10230;</span></ion-button>
+      <ion-button expand="block" (click)="firstLogin()" class="main-button">Login<span>&#10230;</span></ion-button>
     </div>
   </div>
 </ion-content>
