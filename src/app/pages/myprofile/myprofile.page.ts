@@ -21,6 +21,7 @@ export class MyprofilePage implements OnInit {
     private toastService: ToastService) { }
 
   ngOnInit() {
+    // tslint:disable-next-line: deprecation
     this.auth.userData$.subscribe((res: any) => {
       this.authUser = res;
       console.log('aaaaaaaaaa');
@@ -28,12 +29,13 @@ export class MyprofilePage implements OnInit {
       this.getProfile();
   });
 
-    
+
 }
 
 getProfile(){
   this.postData.token = this.authUser;
   console.log(this.postData);
+  // tslint:disable-next-line: deprecation
   this.profileService.profileData(this.postData).subscribe(
       (res: any) => {
        console.log(res);
@@ -42,7 +44,7 @@ getProfile(){
         this.toastService.presentToast('Network Issue.');
       }
     );
-  
+
 }
 
 }

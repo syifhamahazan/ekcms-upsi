@@ -23,7 +23,7 @@ export class HttpService {
 
   const url = environment.apiUrl + serviceName;
   console.log(apiHeaders, data);
-  return this.http.post(url, body.toString(), {headers: apiHeaders, withCredintials: true });
+  return this.http.post(url, body.toString(), {headers: apiHeaders });
   }
 
   getProfile(serviceName: string, data: any) {
