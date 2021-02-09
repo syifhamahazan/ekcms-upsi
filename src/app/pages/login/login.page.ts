@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
 
   loginAction(){
   if (this.validateInputs()) {
+    // tslint:disable-next-line: deprecation
     this.authService.login(this.postData).subscribe((res: any) => {
       console.log('Done validate');
       console.log(res);
