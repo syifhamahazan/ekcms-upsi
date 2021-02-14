@@ -27,18 +27,47 @@ export class HttpService {
   }
 
   getProfile(serviceName: string, data: any) {
-    console.log(data.token);
+    console.log('Data is');
+    console.log(data);
     const apiHeaders = {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers': 'Authorization',
       'Content-Type': 'application/json',
-      Authorization: 'Bearer ' + data.token
+      Authorization: 'Bearer ' + data
     };
-    const param = new HttpParams()
-    .set(`AccessionNo`, data.AccessionNo);
     const url = environment.apiUrl + serviceName;
     console.log (url);
-    return this.http.get(url, { headers: apiHeaders , params: param  });
+    return this.http.get(url, { headers: apiHeaders });
     }
+
+    getWishlist(serviceName: string, data: any) {
+      console.log('Data is');
+      console.log(data);
+      const apiHeaders = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'Authorization',
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + data
+      };
+      const url = environment.apiUrl + serviceName;
+      console.log (url);
+      return this.http.get(url, { headers: apiHeaders });
+      }
+
+      getLoan(serviceName: string, data: any) {
+        console.log('Loan data is');
+        console.log(data);
+        const apiHeaders = {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+          'Access-Control-Allow-Headers': 'Authorization',
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + data
+        };
+        const url = environment.apiUrl + serviceName;
+        console.log (url);
+        return this.http.get(url, { headers: apiHeaders });
+        }
 }

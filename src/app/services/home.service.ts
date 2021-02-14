@@ -12,4 +12,10 @@ export class HomeService {
   homeData(postData: any): Observable<any>{
     return this.httpService.post('api', postData);
   }
+
+  profileData(postData: any): Observable<any>{
+    console.log('Postdata is');
+    console.log(postData);
+    return this.httpService.getProfile('api/patron', postData);
+  }
 }

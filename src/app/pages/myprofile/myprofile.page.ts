@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { MyprofileService } from 'src/app/services/myprofile.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -11,11 +12,11 @@ import { ToastService } from 'src/app/services/toast.service';
 export class MyprofilePage implements OnInit {
   public authUser: any;
   postData = {
-    AccessionNo: 'root',
     token: ''
   };
 
   constructor(
+    private router: Router,
     private auth: AuthService,
     private profileService: MyprofileService,
     private toastService: ToastService) { }
@@ -24,27 +25,37 @@ export class MyprofilePage implements OnInit {
     // tslint:disable-next-line: deprecation
     this.auth.userData$.subscribe((res: any) => {
       this.authUser = res;
-      console.log('aaaaaaaaaa');
       console.log(res);
-      this.getProfile();
+      this.getProfile(res);
   });
 
 
 }
 
-getProfile(){
-  this.postData.token = this.authUser;
-  console.log(this.postData);
+getProfile(token: any){
+  // this.postData.token = this.authUser;
+  console.log('This is token');
+  console.log(token);
   // tslint:disable-next-line: deprecation
-  this.profileService.profileData(this.postData).subscribe(
+  this.profileService.profileData(token).subscribe(
       (res: any) => {
-       console.log(res);
+        console.log('Profile response');
+        console.log(res);
+        this.profileService.changeProfileData(res);
       },
       (error: any) => {
-        this.toastService.presentToast('Network Issue.');
+        this.toastService.presentToast('Loading...');
       }
     );
 
+}
+
+editprofile(){
+  this.router.navigate(['./myprofile/profilepic']);
+}
+
+editpwd(){
+  this.router.navigate(['./myprofile/editpwd']);
 }
 
 }

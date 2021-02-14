@@ -8,37 +8,11 @@
   <h1 class="title">Profile Details</h1>
   <img src="../../../assets/images/potrait.jpg" />
   <ion-toolbar color="translucent">
-    <ion-button expand="block" class="main-button" routerLink="/home/search" routerDirection="back">Edit Profile Picture</ion-button>
+    <ion-button expand="block" class="main-button" (click)="editprofile()">Edit Profile Picture</ion-button>
+    <ion-button expand="block" class="main-button" (click)="editpwd()">Edit Password</ion-button>
+
   </ion-toolbar>
   <div class="profile-info">
-    <ion-item>
-      <ion-label position="floating">Name</ion-label>
-      <ion-input value="Mohd Safwan"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Email</ion-label>
-      <ion-input value="safwan70@gmail.com"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Member Id</ion-label>
-      <ion-input value="safwan"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Contact No</ion-label>
-      <ion-input value="019-238439289"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Membership</ion-label>
-      <ion-input value="Patron"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Final Borrow Date: </ion-label>
-      <ion-input value="16-12-2021"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Number of renews per item: </ion-label>
-      <ion-input value="0 Each"></ion-input>
-    </ion-item>
-    
+    <app-profile-card></app-profile-card> 
   </div>
 </ion-content>

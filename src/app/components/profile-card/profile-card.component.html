@@ -1,5 +1,35 @@
 <ion-card *ngFor="let profile of profileData; let i = index">
-  <ion-card-content [innerHTML]="profile.firstName">
-    
-  </ion-card-content>
+  <ion-card-content [innerHTML]="profile.firstName"></ion-card-content>
+  <ion-card-content [innerHTML]="profile.email"></ion-card-content>
+  <ion-card-content [innerHTML]="profile.primaryPhoneNo"></ion-card-content>
 </ion-card>
+<div *ngFor="let profile of profileData; let i = index" style="padding-bottom: 5px;">
+  <ion-item>
+      <ion-label>Member ID: </ion-label>
+      <ion-input>{{profile.accessionNo}}</ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Membership: </ion-label>
+      <ion-input><br>{{profile.startDate}} - {{profile.endDate}}</ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <ion-label position="floating">Member Id</ion-label>
+      <ion-input value="safwan"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contact No</ion-label>
+      <ion-input value="019-238439289"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Membership</ion-label>
+      <ion-input value="Patron"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Final Borrow Date: </ion-label>
+      <ion-input value="16-12-2021"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Number of renews per item: </ion-label>
+      <ion-input value="0 Each"></ion-input>
+    </ion-item> -->
+  </div>

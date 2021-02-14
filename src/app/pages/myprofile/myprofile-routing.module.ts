@@ -7,6 +7,14 @@ const routes: Routes = [
   {
     path: '',
     component: MyprofilePage
+  },
+  {
+    path: 'profilepic',
+    loadChildren: () => import('./profilepic/profilepic.module').then( m => m.ProfilepicPageModule)
+  },
+  {
+    path: 'editpwd',
+    loadChildren: () => import('./editpwd/editpwd.module').then( m => m.EditpwdPageModule)
   }
 ];
 

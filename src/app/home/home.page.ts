@@ -14,6 +14,7 @@ export class HomePage implements OnInit {
   constructor(private router: Router, public alertController: AlertController, private authService: AuthService) { }
 
   ngOnInit() {
+    // tslint:disable-next-line: deprecation
     this.authService.userData$.subscribe((res: any) => {
       this.displayUserData = res;
     });
