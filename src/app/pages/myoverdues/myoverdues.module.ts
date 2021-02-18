@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MyoverduesPageRoutingModule } from './myoverdues-routing.module';
 
 import { MyoverduesPage } from './myoverdues.page';
+import { ComponentsModule } from 'src/app/components/components.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MyoverduesPageRoutingModule
+    MyoverduesPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [MyoverduesPage]
 })

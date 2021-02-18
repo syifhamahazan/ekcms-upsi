@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { MysearchhistoryPageRoutingModule } from './mysearchhistory-routing.module';
 
 import { MysearchhistoryPage } from './mysearchhistory.page';
+import { ComponentsModule } from 'src/app/components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MysearchhistoryPageRoutingModule
+    MysearchhistoryPageRoutingModule,
+    ComponentsModule
+
   ],
   declarations: [MysearchhistoryPage]
 })

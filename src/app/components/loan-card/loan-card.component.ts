@@ -7,7 +7,7 @@ import { MyloanService } from 'src/app/services/myloan.service';
   styleUrls: ['./loan-card.component.scss'],
 })
 export class LoanCardComponent implements OnInit {
-  loanData: any;
+  loanData: any[];
   constructor(private myloanService: MyloanService) { }
 
   ngOnInit() {

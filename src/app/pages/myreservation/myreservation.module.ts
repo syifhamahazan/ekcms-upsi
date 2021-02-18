@@ -8,12 +8,16 @@ import { MyreservationPageRoutingModule } from './myreservation-routing.module';
 
 import { MyreservationPage } from './myreservation.page';
 
+import { ComponentsModule } from 'src/app/components/components.module';
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MyreservationPageRoutingModule
+    MyreservationPageRoutingModule,
+    ComponentsModule
   ],
   declarations: [MyreservationPage]
 })

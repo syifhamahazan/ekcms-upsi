@@ -27,7 +27,7 @@ export class HttpService {
   }
 
   getProfile(serviceName: string, data: any) {
-    console.log('Data is');
+    console.log('Profile Data is');
     console.log(data);
     const apiHeaders = {
       'Access-Control-Allow-Origin': '*',
@@ -42,7 +42,7 @@ export class HttpService {
     }
 
     getWishlist(serviceName: string, data: any) {
-      console.log('Data is');
+      console.log('Wishlist Data is');
       console.log(data);
       const apiHeaders = {
         'Access-Control-Allow-Origin': '*',
@@ -56,7 +56,7 @@ export class HttpService {
       return this.http.get(url, { headers: apiHeaders });
       }
 
-      getLoan(serviceName: string, data: any) {
+    getLoan(serviceName: string, data: any) {
         console.log('Loan data is');
         console.log(data);
         const apiHeaders = {
@@ -70,4 +70,66 @@ export class HttpService {
         console.log (url);
         return this.http.get(url, { headers: apiHeaders });
         }
+
+    getLoanhist(serviceName: string, data: any) {
+      console.log('Loan history data is');
+      console.log(data);
+      const apiHeaders = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'Authorization',
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + data
+      };
+      const url = environment.apiUrl + serviceName;
+      console.log (url);
+      return this.http.get(url, { headers: apiHeaders });
+      }
+
+    getReservation(serviceName: string, data: any) {
+      console.log('Reservation data is');
+      console.log(data);
+      const apiHeaders = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'Authorization',
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + data
+      };
+      const url = environment.apiUrl + serviceName;
+      console.log (url);
+      return this.http.get(url, { headers: apiHeaders });
+      }
+
+      getOverdue(serviceName: string, data: any) {
+        console.log('Overdue data is');
+        console.log(data);
+        const apiHeaders = {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+          'Access-Control-Allow-Headers': 'Authorization',
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + data
+        };
+        const url = environment.apiUrl + serviceName;
+        console.log (url);
+        return this.http.get(url, { headers: apiHeaders });
+        }
+
+        getSearchhist(serviceName: string, data: any) {
+          console.log('Search history is');
+          console.log(data);
+          const apiHeaders = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+            'Access-Control-Allow-Headers': 'Authorization',
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ' + data
+          };
+          const url = environment.apiUrl + serviceName;
+          console.log (url);
+          return this.http.get(url, { headers: apiHeaders });
+          }
+
+
 }

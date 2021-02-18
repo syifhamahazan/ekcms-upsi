@@ -15,7 +15,7 @@ export class MywishlistService {
 
   wishlistData(postData: any): Observable<any> {
     console.log('Get Wishlist');
-    return this.httpService.getWishlist('wishlist', postData);
+    return this.httpService.getWishlist('api/wishlist', postData);
   }
 
 }
