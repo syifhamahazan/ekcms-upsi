@@ -11,10 +11,11 @@ export class ProfileCardComponent implements OnInit {
   constructor(private myprofileService: MyprofileService) { }
 
   ngOnInit() {
-
     // tslint:disable-next-line: deprecation
     this.myprofileService.profileData$.subscribe((res: any) => {
       this.profileData = res;
+      console.log('inside components');
+      console.log(this.profileData);
     });
   }
 

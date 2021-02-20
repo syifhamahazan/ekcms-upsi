@@ -1,5 +1,5 @@
 <ion-grid>
-  <ion-row class="header-row" scrollable>
+  <ion-row>
     <ion-col>
       Search Area
     </ion-col>
@@ -7,47 +7,21 @@
       Search Keywords
     </ion-col>
     <ion-col>
-      Author
-    </ion-col>
-    <ion-col class="ion-hide-lg-down">
       Search Date
     </ion-col>
   </ion-row>
-  <ion-row>
+
+  <ion-row class="header-row" text-wrap *ngFor="let sh of searchhistData" scrollable>
     <ion-col>
-      <h4>EKCMS Catalogue</h4>
+      <h4>{{sh.searchType}}</h4>
     </ion-col>
     <ion-col>
-      <h4>islam</h4>
+      <h4>{{sh.keywords}}</h4>
     </ion-col>
     <ion-col>
-      <h4>30/12/2020</h4>
+      <h4>{{sh.updatedDate}}</h4>
     </ion-col>
   </ion-row>
 
-  
-  <ion-row>
-    <ion-col>
-      <h4>EKCMS Catalogue</h4>
-    </ion-col>
-    <ion-col>
-      <h4>saham</h4>
-    </ion-col>
-    <ion-col>
-      <h4>30/12/2020</h4>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col>
-      <h4>EKCMS Catalogue</h4>
-    </ion-col>
-    <ion-col>
-      <h4>news</h4>
-    </ion-col>
-    <ion-col>
-      <h4>28/12/2020</h4>
-    </ion-col>
-  </ion-row>
 </ion-grid>
 

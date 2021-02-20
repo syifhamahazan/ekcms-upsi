@@ -32,17 +32,9 @@ export class HomePage implements OnInit {
     this.authService.userData$.subscribe((res: any) => {
       this.profileData = res;
       console.log('Get Profile');
-      this.getProfile(res);
     });
 
-    // tslint:disable-next-line: deprecation
-    this.auth.userData$.subscribe((res: any) => {
-      this.authUser = res;
-      console.log(res);
-      this.getProfile(res);
-  });
-
-  }
+   }
 
   searchAction(){
     this.router.navigate(['./home/search-result']);
@@ -101,20 +93,5 @@ export class HomePage implements OnInit {
     const result = await alert.onDidDismiss();
     console.log(result);
   }
-  getProfile(token: any){
-    // this.postData.token = this.authUser;
-    console.log('This is token');
-    console.log(token);
-    // tslint:disable-next-line: deprecation
-    this.profileService.profileData(token).subscribe(
-        (res: any) => {
-          console.log('Display profile at home');
-          console.log(res);
-        },
-        (error: any) => {
-          this.toastService.presentToast('Loading...');
-        }
-      );
 
-  }
 }

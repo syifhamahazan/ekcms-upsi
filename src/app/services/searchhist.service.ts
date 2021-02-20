@@ -6,8 +6,13 @@ import { HttpService } from './http.service';
   providedIn: 'root'
 })
 export class SearchhistService {
+  searchhistData$ = new BehaviorSubject<any>([]);
 
   constructor(private httpService: HttpService) { }
+
+  changeSearchhistData(data: any){
+    this.searchhistData$.next(data);
+  }
 
   searchhistData(postData: any): Observable<any>{
     console.log('Postdata is');

@@ -39,7 +39,7 @@ export class MyloanrenewPage implements OnInit {
         (res: any) => {
           console.log('Loan response');
           console.log(res);
-          this.loanService.loanData(res);
+          this.loanService.changeLoanData(res);
         },
         (error: any) => {
           this.toastService.presentToast('Loading...');

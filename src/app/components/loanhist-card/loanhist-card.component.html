@@ -1,9 +1,9 @@
-<div class="order-items">
+<div class="order-items" *ngFor="let lh of loanhistData">
   <ion-card mode="ios">
     <ion-card-content>
       <div class="address">
         <ion-item lines="none">
-          1000213967
+          {{lh.accessionNumber}}
         </ion-item>
       </div>
     
@@ -12,23 +12,23 @@
       <div class="cart-total">
         <ion-item lines="none">
           <ion-label>ISBN</ion-label>
-          <ion-label slot="end" class="ion-text-right">9678907357</ion-label>
+          <ion-label text-wrap slot="end" class="ion-text-right">{{lh.isbn}}</ion-label>
         </ion-item>
         <ion-item lines="none">
           <ion-label>Title</ion-label>
-          <ion-label slot="end" class="ion-text-right">akta kesatuan sekerja 1959 (akta 262)</ion-label>
+          <ion-label text-wrap slot="end" class="ion-text-right">{{lh.title}}</ion-label>
         </ion-item>
         <ion-item lines="none">
           <ion-label>Loan Date</ion-label>
-          <ion-label slot="end" class="ion-text-right">10/11/2020</ion-label>
+          <ion-label text-wrap slot="end" class="ion-text-right">{{lh.loanCreatedDate}}</ion-label>
         </ion-item>
         <ion-item lines="none">
           <ion-label>Due Date</ion-label>
-          <ion-label slot="end" class="ion-text-right">12/11/2020</ion-label>
+          <ion-label text-wrap slot="end" class="ion-text-right">{{lh.loanDueDate}}</ion-label>
         </ion-item>
         <ion-item lines="none">
           <ion-label>Return Date</ion-label>
-          <ion-label slot="end" class="ion-text-right">17/11/2020</ion-label>
+          <ion-label text-wrap slot="end" class="ion-text-right">{{lh.returnedDates}}</ion-label>
         </ion-item>
       </div>
 

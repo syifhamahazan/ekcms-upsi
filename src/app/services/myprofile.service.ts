@@ -14,8 +14,7 @@ export class MyprofileService {
   }
 
   profileData(postData: any): Observable<any>{
-    console.log('Postdata is');
-    console.log(postData);
+    console.log('Get profile');
     return this.httpService.getProfile('api/patron', postData);
   }
 }

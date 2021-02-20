@@ -39,6 +39,7 @@ export class MysearchhistoryPage implements OnInit {
         (res: any) => {
           console.log('Search History response');
           console.log(res);
+          this.searchhistService.changeSearchhistData(res);
         },
         (error: any) => {
           this.toastService.presentToast('Loading...');

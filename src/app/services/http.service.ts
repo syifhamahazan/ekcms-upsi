@@ -58,7 +58,6 @@ export class HttpService {
 
     getLoan(serviceName: string, data: any) {
         console.log('Loan data is');
-        console.log(data);
         const apiHeaders = {
           'Access-Control-Allow-Origin': '*',
           'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
@@ -67,7 +66,6 @@ export class HttpService {
           Authorization: 'Bearer ' + data
         };
         const url = environment.apiUrl + serviceName;
-        console.log (url);
         return this.http.get(url, { headers: apiHeaders });
         }
 

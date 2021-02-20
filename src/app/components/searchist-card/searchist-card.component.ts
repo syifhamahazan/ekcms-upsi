@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchhistService } from 'src/app/services/searchhist.service';
 
 @Component({
   selector: 'app-searchist-card',
@@ -6,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchist-card.component.scss'],
 })
 export class SearchistCardComponent implements OnInit {
+  searchhistData: any;
 
-  constructor() { }
+  constructor(private searchhistService: SearchhistService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    // tslint:disable-next-line: deprecation
+    this.searchhistService.searchhistData$.subscribe((res: any) => {
+      this.searchhistData = res;
+    });
+
+  }
 
 }
