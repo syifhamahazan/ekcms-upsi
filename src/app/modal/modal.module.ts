@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ModalController } from '@ionic/angular';
 
 import { ModalPageRoutingModule } from './modal-routing.module';
 
 import { ModalPage } from './modal.page';
+import { WishlistReqComponent } from './wishlist/wishlist-req/wishlist-req.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ModalPageRoutingModule
+    ModalPageRoutingModule,
+    ReactiveFormsModule
   ],
-  declarations: [ModalPage]
+  exports: [WishlistReqComponent, IonicModule],
+  declarations: [ModalPage, WishlistReqComponent]
 })
 export class ModalPageModule {}

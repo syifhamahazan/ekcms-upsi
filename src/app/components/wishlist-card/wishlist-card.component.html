@@ -1,4 +1,4 @@
-<div class="order-items" *ngFor="let wl of wishlistData">
+<div class="order-items" *ngFor="let wl of wishlistData; let i = index">
   <ion-card mode="ios">
     <ion-card-content>
       <div class="address">
@@ -44,7 +44,7 @@
         </ion-item>
       </div>
 
-        <ion-button expand="block" color="warning">Remove</ion-button>
+        <ion-button expand="block" color="warning" (click)="removewlReq(wl.id, i)">Remove</ion-button>
         <ion-button expand="block" color="secondary">Edit</ion-button>
       
     </ion-card-content>

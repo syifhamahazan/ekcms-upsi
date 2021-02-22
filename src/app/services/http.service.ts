@@ -9,7 +9,7 @@ export class HttpService {
 
   constructor(private http: HttpClient) {}
 
-   post(serviceName: string, data: any) {
+  post(serviceName: string, data: any) {
   //   const headers = new HttpHeaders({
   //     'Content-Type': 'application/x-www-form-urlencoded'
   //  });
@@ -26,6 +26,20 @@ export class HttpService {
   return this.http.post(url, body.toString(), {headers: apiHeaders });
   }
 
+  delete(serviceName: string, data: any) {
+    console.log(data);
+    const apiHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'Authorization',
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + data
+    };
+    const url = environment.apiUrl + serviceName;
+    console.log(apiHeaders, data);
+    return this.http.delete(url, { headers: apiHeaders });
+    }
+
   getProfile(serviceName: string, data: any) {
     console.log('Profile Data is');
     console.log(data);
@@ -39,7 +53,7 @@ export class HttpService {
     const url = environment.apiUrl + serviceName;
     console.log (url);
     return this.http.get(url, { headers: apiHeaders });
-    }
+  }
 
     getWishlist(serviceName: string, data: any) {
       console.log('Wishlist Data is');

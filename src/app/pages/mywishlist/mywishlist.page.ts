@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { WishlistReqComponent } from 'src/app/modal/wishlist/wishlist-req/wishlist-req.component';
 import { AuthService } from 'src/app/services/auth.service';
 import { MywishlistService } from 'src/app/services/mywishlist.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -48,6 +49,15 @@ export class MywishlistPage implements OnInit {
           this.toastService.presentToast('Loading...');
         }
       );
+
+  }
+
+  async wishlistReq(){
+    const modal = await this.modalContoller.create({
+      component: WishlistReqComponent
+    });
+
+    await modal.present();
 
   }
 

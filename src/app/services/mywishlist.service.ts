@@ -13,9 +13,31 @@ export class MywishlistService {
     this.wishlistData$.next(data);
   }
 
+  getCurrentWishlistData(){
+    return this.wishlistData$.getValue();
+  }
+
+  // delete data from Object
+  deleteWishlistData(msgIndex: number){
+    const data = [];
+    const currentWishlistData = this.getCurrentWishlistData();
+
+    currentWishlistData.splice(msgIndex, 1);
+    const newUpdatedWishlist = data.concat(currentWishlistData);
+    this.changeWishlistData(newUpdatedWishlist);
+  }
+
   wishlistData(postData: any): Observable<any> {
     console.log('Get Wishlist');
     return this.httpService.getWishlist('api/wishlist', postData);
   }
+
+// delete data from API
+  cancelwishlistReq(postData: any): Observable<any> {
+      console.log('Cancel Wishlist');
+      return this.httpService.delete('api/wishlist', postData);
+    }
+
+
 
 }

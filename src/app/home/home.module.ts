@@ -15,7 +15,7 @@ import { HomePage } from './home.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
     // ModalController
   ],
   declarations: [HomePage]

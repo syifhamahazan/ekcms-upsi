@@ -8,7 +8,7 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'https://192.168.0.14:45455/'
+  apiUrl: 'https://192.168.68.111:45455/'
   };
 
 /*
