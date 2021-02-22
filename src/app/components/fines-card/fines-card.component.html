@@ -1,0 +1,46 @@
+<ion-card *ngFor="let fine of finesData" >
+  <div class="order-items">
+    <ion-card mode="ios">
+      <ion-card-content >
+        <div class="address">
+          <ion-item lines="none">
+            {{fine.accessionNumber}}
+          </ion-item>
+        </div>
+
+        <hr>
+
+        <div class="cart-total">
+          <ion-item lines="none">
+            <ion-label>ISBN</ion-label>
+            <ion-label text-wrap slot="end" class="ion-text-right">{{fine.isbn}}</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Title</ion-label>
+            <ion-label text-wrap slot="end" class="ion-text-right">{{fine.title}}</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Loan Date</ion-label>
+            <ion-label text-wrap slot="end" class="ion-text-right">{{fine.loanStartDate}}</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Due Date</ion-label>
+            <ion-label text-wrap slot="end" class="ion-text-right">{{fine.loanDueDate}}</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Overdue Days</ion-label>
+            <ion-label text-wrap slot="end" class="ion-text-right">{{fine.balanceDays}} Days</ion-label>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>Fine</ion-label>
+            <ion-label text-wrap slot="end" class="ion-text-right">RM {{fine.amount}}</ion-label>
+          </ion-item>
+        </div>
+
+        
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+
+</ion-card>

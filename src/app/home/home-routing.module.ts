@@ -71,6 +71,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/mysearchhistory/mysearchhistory.module').then( m => m.MysearchhistoryPageModule)
       },
       {
+        path: 'myfines',
+        loadChildren: () => import('../pages/myfines/myfines.module').then( m => m.MyfinesPageModule)
+      },
+      {
        path: 'logout',
        loadChildren: () => import('../pages/logout/logout.module').then( m => m.LogoutPageModule)
      }

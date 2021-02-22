@@ -83,6 +83,20 @@ export class HttpService {
         return this.http.get(url, { headers: apiHeaders });
         }
 
+
+      getFines(serviceName: string, data: any) {
+      console.log('Fines data is');
+      const apiHeaders = {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+        'Access-Control-Allow-Headers': 'Authorization',
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + data
+      };
+      const url = environment.apiUrl + serviceName;
+      return this.http.get(url, { headers: apiHeaders });
+      }
+
     getLoanhist(serviceName: string, data: any) {
       console.log('Loan history data is');
       console.log(data);

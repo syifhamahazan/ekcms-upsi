@@ -46,6 +46,9 @@ export class HomePage implements OnInit {
   myloanhist(){
     this.router.navigate(['./home/myloanhistory']);
   }
+  myfines(){
+    this.router.navigate(['./home/myfines']);
+  }
   myoverdues(){
     this.router.navigate(['./home/myoverdues']);
   }
