@@ -171,5 +171,20 @@ export class HttpService {
           return this.http.get(url, { headers: apiHeaders });
           }
 
+          getSearchRes(serviceName: string, data: any) {
+            const body = new HttpParams()
+            .set(`searchField`, `10011`);
+            const apiHeaders = {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+              'Access-Control-Allow-Headers': 'Authorization',
+              Authorization: 'Bearer ' + data
+            };
+            const url = environment.apiUrl + serviceName;
+            console.log (url + body);
+            return this.http.get(`${url}?${body}`, { headers: apiHeaders });
+            }
+
+
 
 }

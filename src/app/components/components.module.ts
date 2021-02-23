@@ -14,13 +14,14 @@ import { ReservationCardComponent } from './reservation-card/reservation-card.co
 import { OverdueCardComponent } from './overdue-card/overdue-card.component';
 import { SearchistCardComponent } from './searchist-card/searchist-card.component';
 import { FinesCardComponent } from './fines-card/fines-card.component';
+import { SearchresCardComponent } from './searchres-card/searchres-card.component';
 
 @NgModule({
   declarations: [SlidesComponent, StartComponent, LogoComponent,
-    LoanhistCardComponent, ReservationCardComponent, OverdueCardComponent,
+    LoanhistCardComponent, ReservationCardComponent, OverdueCardComponent, SearchresCardComponent,
     ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent],
   exports: [SlidesComponent, StartComponent, LogoComponent, LoanhistCardComponent, ReservationCardComponent, OverdueCardComponent,
-   ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent],
+   ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent, SearchresCardComponent],
   imports: [
     CommonModule,
     FormsModule,
