@@ -8,6 +8,7 @@ import { SearchPageRoutingModule } from './search-routing.module';
 
 import { SearchPage } from './search.page';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { SearchAreaComponent } from 'src/app/modal/search-area/search-area.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     SearchPageRoutingModule,
     ComponentsModule
   ],
-  declarations: [SearchPage]
+  declarations: [SearchPage],
+  entryComponents: [SearchAreaComponent]
+
 })
 export class SearchPageModule {}

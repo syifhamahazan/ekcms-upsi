@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Search Options:
+    </ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="dismissModal()">Close</ion-button>
+      </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item>
+      <ion-label>ACADEMIC ONEFILE</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ACADEMIC ONEFILE [ASProxy]</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>ALMANHAL</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Almanhal [ASProxy]</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Almanhal [ASProxy]</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>BLIS (BERNAMA)</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Emerald [ASProxy]</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Emerald Insight</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>KUIS Catalogue</ion-label>
+      <ion-checkbox color="primary"></ion-checkbox>
+    </ion-item>
+
+
+
+    <ion-label position="floating" class="required">Location</ion-label>
+    <ion-input type="text">
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Any Location</ion-select-option>
+        <ion-select-option value="m">Perpustakaan Imam Al-Syafi'i</ion-select-option>
+        <ion-select-option value="m">Perpustakaan Satellite (INHAD)</ion-select-option>
+        <ion-select-option value="m">Perpustakaan Satellite (Irti Coner)</ion-select-option>
+        <ion-select-option value="m">Galeri Fakuliti FSU</ion-select-option>
+    </ion-select>
+    </ion-input>
+
+    <ion-label position="floating" class="required">Material Type</ion-label>
+    <ion-input type="text">
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Any Material Type</ion-select-option>
+        <ion-select-option value="m">Act</ion-select-option>
+        <ion-select-option value="m">Article</ion-select-option>
+        <ion-select-option value="m">Atlases</ion-select-option>
+    </ion-select>
+    </ion-input>
+
+    <ion-label position="floating" class="required">References</ion-label>
+    <ion-input  type="text">
+      <ion-select placeholder="Select One">
+        <ion-select-option value="f">Buku Rujukan</ion-select-option>
+        <ion-select-option value="m">E-book</ion-select-option>
+        <ion-select-option value="m">Majalah</ion-select-option>
+
+    </ion-select>
+    </ion-input>
+
+
+
+</ion-list>
+</ion-content>

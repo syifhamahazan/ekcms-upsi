@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { SearchbyareaComponent } from './searchbyarea.component';
+import { SearchAreaComponent } from './search-area.component';
 
-describe('SearchbyareaComponent', () => {
-  let component: SearchbyareaComponent;
-  let fixture: ComponentFixture<SearchbyareaComponent>;
+describe('SearchAreaComponent', () => {
+  let component: SearchAreaComponent;
+  let fixture: ComponentFixture<SearchAreaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchbyareaComponent ],
+      declarations: [ SearchAreaComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(SearchbyareaComponent);
+    fixture = TestBed.createComponent(SearchAreaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

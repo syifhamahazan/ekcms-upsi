@@ -42,7 +42,6 @@ export class LoginPage implements OnInit {
       console.log(res);
       // userData depend on name in API
       if (res) {
-        // Storing the User data.
         this.storageService.store(AuthConstants.AUTH, res.access_token);
         this.router.navigate(['./home/search']);
       } else {
@@ -56,7 +55,6 @@ export class LoginPage implements OnInit {
 
     this.toastService.presentToast('Please give some information');
   }
-  // console.log(this.postData);
   }
 
 }

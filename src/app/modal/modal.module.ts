@@ -8,6 +8,7 @@ import { ModalPageRoutingModule } from './modal-routing.module';
 
 import { ModalPage } from './modal.page';
 import { WishlistReqComponent } from './wishlist/wishlist-req/wishlist-req.component';
+import { SearchAreaComponent } from './search-area/search-area.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { WishlistReqComponent } from './wishlist/wishlist-req/wishlist-req.compo
     ModalPageRoutingModule,
     ReactiveFormsModule
   ],
-  exports: [WishlistReqComponent, IonicModule],
-  declarations: [ModalPage, WishlistReqComponent]
+  exports: [WishlistReqComponent, IonicModule, SearchAreaComponent],
+  declarations: [ModalPage, WishlistReqComponent, SearchAreaComponent]
 })
 export class ModalPageModule {}

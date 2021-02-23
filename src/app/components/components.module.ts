@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { SearchbyareaComponent } from './modals/searchbyarea/searchbyarea.component';
 import { ProfileCardComponent } from './profile-card/profile-card.component';
 import { WishlistCardComponent } from './wishlist-card/wishlist-card.component';
 import { LoanCardComponent } from './loan-card/loan-card.component';
@@ -17,10 +16,11 @@ import { SearchistCardComponent } from './searchist-card/searchist-card.componen
 import { FinesCardComponent } from './fines-card/fines-card.component';
 
 @NgModule({
-  declarations: [SlidesComponent, StartComponent, LogoComponent, LoanhistCardComponent, ReservationCardComponent, OverdueCardComponent,
-    SearchbyareaComponent, ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent],
+  declarations: [SlidesComponent, StartComponent, LogoComponent,
+    LoanhistCardComponent, ReservationCardComponent, OverdueCardComponent,
+    ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent],
   exports: [SlidesComponent, StartComponent, LogoComponent, LoanhistCardComponent, ReservationCardComponent, OverdueCardComponent,
-    SearchbyareaComponent, ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent],
+   ProfileCardComponent, WishlistCardComponent, LoanCardComponent, SearchistCardComponent, FinesCardComponent],
   imports: [
     CommonModule,
     FormsModule,

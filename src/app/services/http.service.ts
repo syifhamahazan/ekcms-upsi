@@ -55,6 +55,20 @@ export class HttpService {
     return this.http.get(url, { headers: apiHeaders });
   }
 
+  getSearch(serviceName: string, data: any) {
+    console.log('Search Result...');
+    const apiHeaders = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'Authorization',
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + data
+    };
+    const url = environment.apiUrl + serviceName;
+    return this.http.get(url, { headers: apiHeaders });
+    }
+
+
     getWishlist(serviceName: string, data: any) {
       console.log('Wishlist Data is');
       console.log(data);
