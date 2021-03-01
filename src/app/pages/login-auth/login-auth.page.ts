@@ -38,6 +38,7 @@ export class LoginAuthPage implements OnInit {
     console.log(this.qty);
     if (this.qty === '011'){
       if (this.validateInputs){
+        // tslint:disable-next-line: deprecation
         this.authService.login(this.postData).subscribe((res: any) => {
           console.log('Done validate');
           console.log(res);
@@ -65,15 +66,6 @@ export class LoginAuthPage implements OnInit {
       this.toastService.presentToast('Authorization failed! Please try again.');
     }
 
-   // alert('hello');
-   // if (this.validateInput()){
-   //   // this.authService.login(this.postData).subscribe([res: any] =>{
-
-   //   // })
-   // }else{
-
-   //   console.log('Please give some information');
-   // }
    }
 
 }
