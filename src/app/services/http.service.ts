@@ -10,18 +10,15 @@ export class HttpService {
   constructor(private http: HttpClient) {}
 
   post(serviceName: string, data: any) {
-  //   const headers = new HttpHeaders({
-  //     'Content-Type': 'application/x-www-form-urlencoded'
-  //  });
+
   const body = new HttpParams()
   .set(`grant_type`, data.grant_type)
   .set(`username`, data.username)
   .set(`password`, data.password);
   const apiHeaders = {'Content-Type': 'application/x-www-form-urlencoded'};
 
-    // const options = { header: headers };
-
   const url = environment.apiUrl + serviceName;
+  console.log(url);
   console.log(apiHeaders, data);
   return this.http.post(url, body.toString(), {headers: apiHeaders });
   }
