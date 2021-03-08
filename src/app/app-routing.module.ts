@@ -71,6 +71,7 @@ const routes: Routes = [
     path: 'myfines',
     loadChildren: () => import('./pages/myfines/myfines.module').then( m => m.MyfinesPageModule)
   }
+
 ];
 @NgModule({
   imports: [

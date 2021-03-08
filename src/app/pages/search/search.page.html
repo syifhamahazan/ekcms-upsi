@@ -58,7 +58,7 @@
 
   <ion-list>
  
-    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['/', 'movies', item.imdbID]">
+    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['./', 'opac-result', item.citedworkId]">
       <ion-thumbnail slot="start">
         <img src="../../../assets/images/book5.jpg">
       </ion-thumbnail>

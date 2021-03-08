@@ -44,6 +44,17 @@ export class OpacSearchService {
   }
 
 
-  getDetails(id) {
-    // return this.http.get(`${this.url}?i=${id}&plot=full&apikey=${this.apiKey}`);
+  getDetails(cwId, token) {
+    const headerDict = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+      'Access-Control-Allow-Headers': 'Authorization',
+      'Content-Type': 'application/json',
+      Authorization: 'Bearer ' + token
+    };
+
+    const requestOptions = {
+      headers: new HttpHeaders(headerDict)
+    };
+    return this.http.get(`${this.url}?CitedworkId=${encodeURI(cwId)}`, requestOptions);
   }}

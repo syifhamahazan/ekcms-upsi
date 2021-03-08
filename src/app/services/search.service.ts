@@ -27,8 +27,8 @@ export class SearchService {
 
 }
 
-// getDetails(id) {
-//   return this.http.get(`${this.url}?i=${id}`);
-// }
+getDetails(callno) {
+  return this.http.get(`${this.url}?callNumber=${callno}`);
+}
 
 }
