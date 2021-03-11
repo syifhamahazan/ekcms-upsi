@@ -10,7 +10,7 @@
 
     <ion-item>
       <ion-label position="floating">Filter By</ion-label>
-        <ion-select ok-text="Okay" cancel-text="Cancel">
+        <ion-select  [(ngModel)]="type1" (ionChange)="searchChanged($event)">
           <ion-select-option value="title">Title</ion-select-option>
           <ion-select-option value="author">Author</ion-select-option>
           <ion-select-option value="ISBN">ISBN</ion-select-option>
@@ -21,11 +21,7 @@
         </ion-select>
     </ion-item>
 
-    <div class="search">
-    <ion-item>
-      <ion-input placeholder='Enter keywords' types='text'></ion-input>
-    </ion-item> 
-    </div>
+    <ion-searchbar showCancelButton="focus" cancelButtonText="Cancel" [(ngModel)]="searchField1"></ion-searchbar>
 
 
     <ion-grid>
@@ -34,8 +30,8 @@
         <ion-col>
           {{ row?.firstCol }}
           <ion-item class="operator-box">
-            <ion-label position="floating">Search Operator</ion-label>
-              <ion-select ok-text="Okay" cancel-text="Cancel">
+            <ion-label position="floating">Operator</ion-label>
+              <ion-select  [(ngModel)]="operators1" (ionChange)="searchChanged($event)">
                 <ion-select-option value="AND">AND</ion-select-option>
                 <ion-select-option value="OR">OR</ion-select-option>
                 <ion-select-option value="NOT">NOT</ion-select-option>
@@ -47,27 +43,18 @@
           {{ row?.secondCol }}
           <ion-item>
             <ion-label position="floating">Filter By</ion-label>
-              <ion-select ok-text="Okay" cancel-text="Cancel">
-                <ion-select-option value="title">Title</ion-select-option>
+            <ion-select  [(ngModel)]="type2" (ionChange)="searchChanged($event)">
+              <ion-select-option value="title">Title</ion-select-option>
                 <ion-select-option value="author">Author</ion-select-option>
                 <ion-select-option value="ISBN">ISBN</ion-select-option>
                 <ion-select-option value="ISSN">ISSN</ion-select-option>
                 <ion-select-option value="subject">Subject</ion-select-option>
-                <ion-select-option value="sall Number">Call Number</ion-select-option>
+                <ion-select-option value="call Number">Call Number</ion-select-option>
                 <ion-select-option value="series">Series</ion-select-option>
               </ion-select>
           </ion-item>
         </ion-col>
-
-        <ion-col>
-          {{ row?.thirdCol }}
-          <div class="search">
-            <ion-item>
-              <ion-input placeholder='Enter keywords' types='text'></ion-input>
-            </ion-item> 
-            </div>
-        </ion-col>
-   
+        <ion-searchbar showCancelButton="focus" cancelButtonText="Cancel" [(ngModel)]="searchField2" (ionChange)="searchChanged($event)"></ion-searchbar>
       </ion-row>
     </ion-grid>
 
@@ -91,4 +78,23 @@
        </ion-row>
     </ion-grid>
   </form>
+
+  <ion-list>
+ 
+    <ion-item button *ngFor="let item of (results | async)" [routerLink]="['./', 'opac-result', item.citedworkId]">
+      <ion-thumbnail slot="start">
+        <img src="../../../assets/images/book5.jpg">
+      </ion-thumbnail>
+ 
+      <ion-label text-wrap>
+        {{ item.title.substring(2) }}
+        <h3>{{ item.author.substring(2) }}</h3>
+      </ion-label>
+ 
+ 
+    </ion-item>
+ 
+  </ion-list>
+ 
+
 </ion-content>

@@ -11,3 +11,4 @@
   </div>
   <app-wishlist-card [loginUser]="authUser"></app-wishlist-card>    
 </ion-content>
+<div button *ngFor="let wl of (wishlists | async)" [routerLink]="['./', 'wishlist-update', wl.Id]"></div>div>

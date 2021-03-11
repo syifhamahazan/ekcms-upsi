@@ -34,7 +34,7 @@ export class HttpService {
     };
     const url = environment.apiUrl + serviceName;
     console.log(apiHeaders, data);
-    return this.http.delete(url, { headers: apiHeaders });
+    return this.http.put(url, { headers: apiHeaders });
     }
 
   getProfile(serviceName: string, data: any) {

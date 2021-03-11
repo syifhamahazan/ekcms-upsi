@@ -45,7 +45,7 @@
       </div>
 
         <ion-button expand="block" color="warning" (click)="removewlReq(wl.id, i)">Remove</ion-button>
-        <ion-button expand="block" color="secondary">Edit</ion-button>
+        <ion-button expand="block" color="secondary" [class.button-disabled]="false" (click)="wishlistEdit()">Edit</ion-button>
       
     </ion-card-content>
   </ion-card>

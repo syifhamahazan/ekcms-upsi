@@ -54,112 +54,135 @@
   <div class="seperator">
     <hr>
   </div>
+ 
 
-  <div class="variation">
-    <ion-segment (ionChange)="segmentChanged($event)" value="size">
-      <ion-segment-button value="size">
-        <ion-label>Details</ion-label>
-      </ion-segment-button>
-      <ion-segment-button value="color">
-        <ion-label>Availability</ion-label>
-      </ion-segment-button>
-    </ion-segment>
+
+<ion-content padding>
+  
+  <ion-segment [(ngModel)]="segment">
+    
+    <ion-segment-button value="details">
+      Details
+    </ion-segment-button>
+    <ion-segment-button value="availability">
+      Availability
+    </ion-segment-button>
+    
+
+  </ion-segment>
+
+
+  <div [ngSwitch]="segment">
+    <ion-card *ngSwitchCase="'details'">
+      <ion-card-header>
+        <ion-grid class="sizes">
+          <ion-row>
+            <ion-col offset-4>
+              <div>Author</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.author}}</div>
+            </ion-col>
+          </ion-row>
+          
+          <ion-row>
+            <ion-col offset-4>
+              <div>ISBN</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.isbn}}</div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col offset-4>
+              <div>Publisher</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <div></div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col offset-4>
+              <div>Call Number</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.callNumber}}</div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col offset-4>
+              Physical Description    </ion-col>
+            <ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>  
+              <div></div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col offset-4>
+              <div>Subject</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <div></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+        <ion-grid class="colors">
+  
+          <ion-row>
+            <ion-col offset-4>
+              <div>Related Name</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <div></div>
+            </ion-col>
+          </ion-row>
+  
+          <ion-row>
+            <ion-col offset-4>
+              <div>URL Name</div>
+            </ion-col>
+            <ion-col></ion-col>
+            <ion-col></ion-col>
+            <ion-col>
+              <div></div>
+            </ion-col>
+          </ion-row>
+  
+        </ion-grid>
+        <div class="button-container">
+          <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        ...
+      </ion-card-content>
+    </ion-card>
+  
+    <ion-card *ngSwitchCase="'availability'">
+      <ion-card-header>
+        Availability
+      </ion-card-header>
+      <ion-card-content>
+        Your card info content here
+      </ion-card-content>
+    </ion-card>
   </div>
-  
-<ion-grid class="sizes">
-  <ion-row>
-    <ion-col offset-4>
-      <div>Author</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col *ngFor="let inf of information ; first as isFirst">
-      <div *ngIf="isFirst">{{inf.author}}</div>
-    </ion-col>
-  </ion-row>
-  
-  <ion-row>
-    <ion-col offset-4>
-      <div>ISBN</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col *ngFor="let inf of information ; first as isFirst">
-      <div *ngIf="isFirst">{{inf.isbn}}</div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col offset-4>
-      <div>Publisher</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col>
-      <div></div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col offset-4>
-      <div>Call Number</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col *ngFor="let inf of information ; first as isFirst">
-      <div *ngIf="isFirst">{{inf.callNumber}}</div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col offset-4>
-      Physical Description    </ion-col>
-    <ion-col>
-      <ion-col></ion-col>
-      <ion-col></ion-col>  
-      <div></div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col offset-4>
-      <div>Subject</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col>
-      <div></div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
-<ion-grid class="colors">
-
-  <ion-row>
-    <ion-col offset-4>
-      <div>Related Name</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col>
-      <div></div>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col offset-4>
-      <div>URL Name</div>
-    </ion-col>
-    <ion-col></ion-col>
-    <ion-col></ion-col>
-    <ion-col>
-      <div></div>
-    </ion-col>
-  </ion-row>
-
-</ion-grid>
-<div class="button-container">
-  <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
-</div>
-
 </ion-content>
