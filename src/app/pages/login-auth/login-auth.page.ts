@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoadingController, NavController } from '@ionic/angular';
 import { AuthConstants } from 'src/app/config/auth-constants';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -18,11 +19,15 @@ export class LoginAuthPage implements OnInit {
     password: ''
   };
 
+  private loading;
+
   constructor(
     private router: Router,
     private toastService: ToastService,
     private storageService: StorageService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private navCtrl: NavController,
+    private loadingCtrl: LoadingController) { }
 
   ngOnInit() {
   }
@@ -35,6 +40,12 @@ export class LoginAuthPage implements OnInit {
       return (this.postData.username && this.postData.password && username.length > 0 && password.length > 0 && this.postData.grant_type);
     }
   firstLogin(){
+    this.loadingCtrl.create({
+      message: 'Authenticating...'
+  }).then((overlay) => {
+    this.loading = overlay;
+    this.loading.present();
+  });
     console.log(this.qty);
     if (this.qty === '011'){
       if (this.validateInputs){
@@ -46,7 +57,10 @@ export class LoginAuthPage implements OnInit {
           if (res) {
             // Storing the User data.
             this.storageService.store(AuthConstants.AUTH, res.access_token);
-            this.router.navigate(['./home/search']);
+            setTimeout(() => {
+              this.loading.dismiss();
+              this.router.navigate(['./home/search']);
+            }, 4000);
           } else {
             this.toastService.presentToast('Incorrect username and password');
           }

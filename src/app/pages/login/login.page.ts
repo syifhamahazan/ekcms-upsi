@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoadingController, NavController } from '@ionic/angular';
 import { AuthConstants } from 'src/app/config/auth-constants';
 import { AuthService } from 'src/app/services/auth.service';
 import { StorageService } from 'src/app/services/storage.service';
@@ -17,11 +18,16 @@ export class LoginPage implements OnInit {
     password: ''
   };
 
+  private loading;
+
   constructor(
     private router: Router,
     private authService: AuthService,
     private storageService: StorageService,
-    private toastService: ToastService) { }
+    private toastService: ToastService,
+    private navCtrl: NavController,
+    private loadingCtrl: LoadingController
+    ) { }
 
   ngOnInit() {
   }
@@ -35,6 +41,13 @@ export class LoginPage implements OnInit {
   }
 
   loginAction(){
+  this.loadingCtrl.create({
+      message: 'Login...'
+  }).then((overlay) => {
+    this.loading = overlay;
+    this.loading.present();
+  });
+
   if (this.validateInputs()) {
     // tslint:disable-next-line: deprecation
     this.authService.login(this.postData).subscribe((res: any) => {
@@ -43,7 +56,10 @@ export class LoginPage implements OnInit {
       // userData depend on name in API
       if (res) {
         this.storageService.store(AuthConstants.AUTH, res.access_token);
-        this.router.navigate(['./home/search']);
+        setTimeout(() => {
+          this.loading.dismiss();
+          this.router.navigate(['./home/search']);
+        }, 4000);
       } else {
         this.toastService.presentToast('Incorrect username and password');
       }

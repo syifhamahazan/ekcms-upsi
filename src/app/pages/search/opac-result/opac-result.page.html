@@ -167,9 +167,6 @@
           </ion-row>
   
         </ion-grid>
-        <div class="button-container">
-          <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
-        </div>
       </ion-card-header>
       <ion-card-content>
         ...
@@ -177,11 +174,69 @@
     </ion-card>
   
     <ion-card *ngSwitchCase="'availability'">
-      <ion-card-header>
-        Availability
-      </ion-card-header>
-      <ion-card-content>
-        Your card info content here
+      <ion-card-content *ngFor="let inf of information">
+        <ion-card-header>
+          <ion-grid class="sizes">
+            <ion-row>
+              <ion-col offset-4>
+                <div>Location</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.location}}</div>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col offset-4>
+                <div>Accession No</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.accessionNumber}}</div>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col offset-4>
+                <div>Material Category</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.materialcategory}}</div>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col offset-4>
+                <div>Copy</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.copy}}</div>
+              </ion-col>
+            </ion-row>
+    
+            <ion-row>
+              <ion-col offset-4>
+                <div>Status</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.status}}</div>
+              </ion-col>
+            </ion-row>
+
+          </ion-grid>
+          <div class="button-container">
+            <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
+          </div>
+        </ion-card-header>
       </ion-card-content>
     </ion-card>
   </div>
