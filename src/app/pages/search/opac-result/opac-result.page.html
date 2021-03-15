@@ -8,9 +8,11 @@
 </ion-header>
 
 <ion-content >
-
-    <img src="../../../assets/images/book5.jpg" />
-
+  <div *ngFor="let inf of information ; first as isFirst">
+    <img *ngIf="isFirst else null" src={{inf.imagepath}} />
+  </div>
+  
+  <img #null src="../../../assets/images/book5.jpg" />
   <div class="ion-padding-vertical">
     <div *ngFor="let inf of information ; first as isFirst">
     <h1 text-wrap class="item-name"*ngIf="isFirst">{{inf.title}}</h1>
@@ -81,10 +83,10 @@
               <div>Author</div>
             </ion-col>
             <ion-col></ion-col>
-            <ion-col></ion-col>
             <ion-col *ngFor="let inf of information ; first as isFirst">
               <div *ngIf="isFirst">{{inf.author}}</div>
             </ion-col>
+            <ion-col></ion-col>
           </ion-row>
           
           <ion-row>
@@ -92,10 +94,10 @@
               <div>ISBN</div>
             </ion-col>
             <ion-col></ion-col>
-            <ion-col></ion-col>
             <ion-col *ngFor="let inf of information ; first as isFirst">
               <div *ngIf="isFirst">{{inf.isbn}}</div>
             </ion-col>
+            <ion-col></ion-col>
           </ion-row>
   
           <ion-row>
@@ -114,10 +116,10 @@
               <div>Call Number</div>
             </ion-col>
             <ion-col></ion-col>
-            <ion-col></ion-col>
             <ion-col *ngFor="let inf of information ; first as isFirst">
               <div *ngIf="isFirst">{{inf.callNumber}}</div>
             </ion-col>
+            <ion-col></ion-col>
           </ion-row>
   
           <ion-row>
@@ -228,7 +230,17 @@
               <ion-col></ion-col>
               <ion-col></ion-col>
               <ion-col>
-                <div>{{inf.status}}</div>
+                <div *ngIf="inf.status == 1 ">Available</div>
+                <div *ngIf="inf.status == 2 ">Reserved</div> 
+                <div *ngIf="inf.status == 3 ">Loaned</div>
+                <div *ngIf="inf.status == 4 ">Damaged</div>
+                <div *ngIf="inf.status == 5 ">Binding</div> 
+                <div *ngIf="inf.status == 6 ">Stored</div>
+                <div *ngIf="inf.status == 7 ">Weeding</div>
+                <div *ngIf="inf.status == 8 ">Missing</div>
+                <div *ngIf="inf.status == 9 ">Processing</div>
+                <div *ngIf="inf.status == 10 ">Inter-library</div>
+                <div *ngIf="inf.status == 13 ">Lost</div>             
               </ion-col>
             </ion-row>
 
