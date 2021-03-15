@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { OpacSearchService } from 'src/app/services/opac-search.service';
 
@@ -19,7 +19,9 @@ export class OpacResultPage implements OnInit {
 
   constructor(
     private auth: AuthService,
-    private activatedRoute: ActivatedRoute, private opacSearchService: OpacSearchService) { }
+    private activatedRoute: ActivatedRoute,
+    private router: Router,
+    private opacSearchService: OpacSearchService) { }
 
   ngOnInit() {
     // tslint:disable-next-line: deprecation
@@ -35,7 +37,10 @@ export class OpacResultPage implements OnInit {
     });
     });
 
+}
 
 
+reserveAction(){
+  this.router.navigate(['./home/reservation']);
 }
 }

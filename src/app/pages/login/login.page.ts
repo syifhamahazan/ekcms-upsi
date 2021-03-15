@@ -47,8 +47,9 @@ export class LoginPage implements OnInit {
     this.loading = overlay;
     this.loading.present();
   });
-
-  if (this.validateInputs()) {
+  setTimeout(() => {
+    this.loading.dismiss();
+    if (this.validateInputs()) {
     // tslint:disable-next-line: deprecation
     this.authService.login(this.postData).subscribe((res: any) => {
       console.log('Done validate');
@@ -56,21 +57,25 @@ export class LoginPage implements OnInit {
       // userData depend on name in API
       if (res) {
         this.storageService.store(AuthConstants.AUTH, res.access_token);
-        setTimeout(() => {
-          this.loading.dismiss();
-          this.router.navigate(['./home/search']);
-        }, 4000);
+        this.router.navigate(['./home/search']);
       } else {
         this.toastService.presentToast('Incorrect username and password');
       }
     },
     (error: any) => {
+      if (error.status === 400){
+        this.toastService.presentToast('Incorrect username and password');
+      }
+      else {
       this.toastService.presentToast('Network Connection Error.');
-    });
+      }
+});
   } else {
 
     this.toastService.presentToast('Please give some information');
   }
+  }, 4000);
+
   }
 
 }

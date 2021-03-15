@@ -46,39 +46,40 @@ export class LoginAuthPage implements OnInit {
     this.loading = overlay;
     this.loading.present();
   });
-    console.log(this.qty);
-    if (this.qty === '011'){
-      if (this.validateInputs){
-        // tslint:disable-next-line: deprecation
-        this.authService.login(this.postData).subscribe((res: any) => {
-          console.log('Done validate');
-          console.log(res);
-          // userData depend on name in API
-          if (res) {
-            // Storing the User data.
-            this.storageService.store(AuthConstants.AUTH, res.access_token);
-            setTimeout(() => {
-              this.loading.dismiss();
-              this.router.navigate(['./home/search']);
-            }, 4000);
-          } else {
-            this.toastService.presentToast('Incorrect username and password');
+    setTimeout(() => {
+        this.loading.dismiss();
+        console.log(this.qty);
+        if (this.qty === '011'){
+          if (this.validateInputs){
+            // tslint:disable-next-line: deprecation
+            this.authService.login(this.postData).subscribe((res: any) => {
+              console.log('Done validate');
+              console.log(res);
+              // userData depend on name in API
+              if (res) {
+                // Storing the User data.
+                this.storageService.store(AuthConstants.AUTH, res.access_token);
+                this.router.navigate(['./home/search']);
+              } else {
+                this.toastService.presentToast('Incorrect username and password');
+              }
+            },
+            (error: any) => {
+              if (error.status === 400){
+                this.toastService.presentToast('Incorrect username and password');
+              }
+              else {
+              this.toastService.presentToast('Network Connection Error.');
+              }
+            });
           }
-        },
-        (error: any) => {
-          if (error.status === 400){
-            this.toastService.presentToast('Incorrect username and password');
-          }
-          else {
-          this.toastService.presentToast('Network Connection Error.');
-          }
-        });
-      }
-      // this.router.navigate(['./home/search']);
-    }
-    else{
-      this.toastService.presentToast('Authorization failed! Please try again.');
-    }
+          // this.router.navigate(['./home/search']);
+        }
+        else{
+          this.toastService.presentToast('Authorization failed! Please try again.');
+        }
+
+      }, 4000);
 
    }
 
