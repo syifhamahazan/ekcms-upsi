@@ -12,6 +12,7 @@ const { Browser } = Plugins;
   styleUrls: ['./myprofile.page.scss'],
 })
 export class MyprofilePage implements OnInit {
+  profileUser: any;
   public authUser: any;
   postData = {
     token: ''
@@ -44,6 +45,7 @@ getProfile(token: any){
         console.log('Profile response');
         console.log(res);
         this.profileService.changeProfileData(res);
+        this.profileUser = res;
       },
       (error: any) => {
         this.toastService.presentToast('Loading...');

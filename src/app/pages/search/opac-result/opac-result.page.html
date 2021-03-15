@@ -177,7 +177,7 @@
   
     <ion-card *ngSwitchCase="'availability'">
       <ion-card-content *ngFor="let inf of information">
-        <ion-card-header>
+        <ion-card-header *ngIf="inf.status == ('1' || '2' || '3' || '4' || '9')">
           <ion-grid class="sizes">
             <ion-row>
               <ion-col offset-4>
