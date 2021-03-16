@@ -6,6 +6,9 @@ import { SearchAreaComponent } from 'src/app/modal/search-area/search-area.compo
 import { AuthService } from 'src/app/services/auth.service';
 import { OpacSearchService, SearchType } from 'src/app/services/opac-search.service';
 import { ToastService } from 'src/app/services/toast.service';
+import { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';
+import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
+
 
 @Component({
   selector: 'app-search',
@@ -19,6 +22,9 @@ export class SearchPage implements OnInit {
   };
 
   results: Observable<any>;
+  metadata: Observable<any>;
+  repository: Observable<any>;
+
   // tslint:disable-next-line: no-inferrable-types
   searchTerm: string = '';
   type: SearchType = SearchType.title;
@@ -27,8 +33,13 @@ export class SearchPage implements OnInit {
     private router: Router,
     private modalCtrl: ModalController,
     private opacSearchService: OpacSearchService,
-    private toastService: ToastService) {
+    private toastService: ToastService,
+    private previewAnyFile: PreviewAnyFile,
+    private document: DocumentViewer) {
      }
+   options: DocumentViewerOptions = {
+      title: 'My PDF'
+    };
 
   ngOnInit() {
     // tslint:disable-next-line: deprecation
@@ -44,6 +55,8 @@ export class SearchPage implements OnInit {
     console.log('Token for search');
     console.log(this.authUser);
     this.results = this.opacSearchService.searchData(this.searchTerm, this.type, this.authUser);
+    this.metadata = this.opacSearchService.searchMetadata(this.searchTerm, this.type, this.authUser);
+    this.repository = this.opacSearchService.searchRepo(this.searchTerm, this.type, this.authUser);
     console.log(this.results);
   }
 
@@ -80,6 +93,16 @@ rbrSearch(){
 //     );
 
 // }
+PreviewFile(path){
+  this.document.viewDocument(`${path}`, 'application/pdf', this.options);
+  console.log(path);
+  // const url = './' + path;
+  // this.previewAnyFile.preview(url).then(() => {
+
+  // }, (err) => {
+  //   alert(JSON.stringify(err) );
+  // });
+}
 
 async searchArea(){
   const modal = await this.modalCtrl.create({

@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalPageModule } from './modal/modal.module';
+import { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+
 
 
 @NgModule({
@@ -19,7 +22,7 @@ import { ModalPageModule } from './modal/modal.module';
   providers: [
     StatusBar,
     SplashScreen,
-    HttpClientModule,
+    HttpClientModule, PreviewAnyFile, DocumentViewer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
