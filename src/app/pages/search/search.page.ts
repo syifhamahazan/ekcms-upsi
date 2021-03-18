@@ -8,7 +8,7 @@ import { OpacSearchService, SearchType } from 'src/app/services/opac-search.serv
 import { ToastService } from 'src/app/services/toast.service';
 import { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';
 import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
-
+import { FileOpener } from '@ionic-native/file-opener/ngx';
 
 @Component({
   selector: 'app-search',
@@ -16,6 +16,7 @@ import { DocumentViewer, DocumentViewerOptions } from '@ionic-native/document-vi
   styleUrls: ['./search.page.scss'],
 })
 export class SearchPage implements OnInit {
+  show = true;
   public authUser: any;
   postData = {
     token: ''
@@ -35,7 +36,8 @@ export class SearchPage implements OnInit {
     private opacSearchService: OpacSearchService,
     private toastService: ToastService,
     private previewAnyFile: PreviewAnyFile,
-    private document: DocumentViewer) {
+    private document: DocumentViewer,
+    private fileOpener: FileOpener) {
      }
    options: DocumentViewerOptions = {
       title: 'My PDF'
@@ -94,14 +96,11 @@ rbrSearch(){
 
 // }
 PreviewFile(path){
-  this.document.viewDocument(`${path}`, 'application/pdf', this.options);
+  // this.document.viewDocument(path, 'application/pdf', this.options);
+  this.previewAnyFile.preview(path)
+  .then((res: any) => console.log(res))
+  .catch((error: any) => console.error(error));
   console.log(path);
-  // const url = './' + path;
-  // this.previewAnyFile.preview(url).then(() => {
-
-  // }, (err) => {
-  //   alert(JSON.stringify(err) );
-  // });
 }
 
 async searchArea(){

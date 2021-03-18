@@ -37,7 +37,7 @@
         </ion-col> -->
         <ion-col>
           <div>
-            <ion-button expand="block" class="search-button" (click)="searchArea()">Search by Area</ion-button>
+            <ion-button expand="block" class="search-button" (click)="searchArea()">HOW TO SEARCH ?</ion-button>
           </div>
         </ion-col>
        </ion-row>
@@ -101,7 +101,7 @@
         <ion-card-header>
           <ion-list>
    
-              <ion-item button *ngFor="let item of (metadata | async)" (click)="PreviewFile(item.filepath)">
+              <ion-item button *ngFor="let item of (metadata | async)" (click)="PreviewFile(item.fullFileName)">
                 <ion-thumbnail slot="start">
                   <img *ngIf="item.imagepath else null" src={{item.imagepath}} />                
                   <img #null src="../../../assets/images/no_img.jpg" />
@@ -131,6 +131,8 @@
               <ion-item button *ngFor="let item of (repository | async)" (click)="PreviewFile(item.directory)">
                 <ion-icon slot="start" *ngIf="item.extension == 'pdf'" name="document"></ion-icon>
                 <ion-icon slot="start" *ngIf="item.extension == 'jpg'" name="image"></ion-icon>
+                <ion-icon slot="start" *ngIf="item.extension == 'txt'" name="document-text"></ion-icon>
+
            
                 <ion-label text-wrap>
                   {{ item.name }}
