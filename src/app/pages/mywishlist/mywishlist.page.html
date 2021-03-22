@@ -9,6 +9,11 @@
     <h1>My Wish List</h1>
     <ion-button expand="block" color="tertiary" (click)="wishlistReq()">Make a request</ion-button>
   </div>
+  <ion-card-content *ngIf="badRequest">
+    <ion-item lines="none">
+      <ion-label>No data available.</ion-label>
+    </ion-item>
+  </ion-card-content>
   <app-wishlist-card [loginUser]="authUser"></app-wishlist-card>    
 </ion-content>
 

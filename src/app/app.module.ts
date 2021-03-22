@@ -13,6 +13,7 @@ import { ModalPageModule } from './modal/modal.module';
 import { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';
 import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 
 
@@ -23,7 +24,7 @@ import { FileOpener } from '@ionic-native/file-opener/ngx';
   providers: [
     StatusBar,
     SplashScreen,
-    HttpClientModule, PreviewAnyFile, DocumentViewer, FileOpener,
+    HttpClientModule, PreviewAnyFile, DocumentViewer, FileOpener, [BnNgIdleService],
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -18,7 +18,7 @@
           <ion-select-option value="isbn">ISBN</ion-select-option>
           <ion-select-option value="issn">ISSN</ion-select-option>
           <ion-select-option value="subject">Subject</ion-select-option>
-          <ion-select-option value="call number">Call Number</ion-select-option>
+          <ion-select-option value="callnumber">Call Number</ion-select-option>
           <ion-select-option value="series">Series</ion-select-option>
         </ion-select>
     
@@ -101,7 +101,7 @@
         <ion-card-header>
           <ion-list>
    
-              <ion-item button *ngFor="let item of (metadata | async)" (click)="PreviewFile(item.fullFileName)">
+              <ion-item button *ngFor="let item of (metadata | async)" (click)="PreviewFile(item.filepath)">
                 <ion-thumbnail slot="start">
                   <img *ngIf="item.imagepath else null" src={{item.imagepath}} />                
                   <img #null src="../../../assets/images/no_img.jpg" />

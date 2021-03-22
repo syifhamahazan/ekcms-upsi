@@ -48,7 +48,7 @@ getProfile(token: any){
         this.profileUser = res;
       },
       (error: any) => {
-        this.toastService.presentToast('Loading...');
+        this.toastService.presentToast('Please wait...');
       }
     );
 

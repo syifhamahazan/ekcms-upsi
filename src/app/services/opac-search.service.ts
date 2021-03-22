@@ -13,7 +13,7 @@ export enum SearchType {
   isbn = 'isbn',
   issn = 'issn',
   subject = 'subject',
-  call_number = 'call number',
+  callnumber = 'callnumber',
   series = 'series'
 }
 
@@ -48,7 +48,7 @@ export class OpacSearchService {
     return this.http.get(`${this.url}?searchfield=${encodeURI(title)}&searchtype=${type}`, requestOptions).pipe(
       map(results => results),
       catchError(err => {
-        this.toastService.presentToast('No data available');
+        this.toastService.presentToast('No catalogue available');
         return throwError(err);
       })
 
@@ -71,7 +71,7 @@ export class OpacSearchService {
     return this.http.get(`${this.urlmetadata}?searchfield=${encodeURI(title)}&searchtype=${type}`, requestOptions).pipe(
       map(results => results),
       catchError(err => {
-        this.toastService.presentToast('No data available');
+        this.toastService.presentToast('No metadata available');
         return throwError(err);
       })
     );
@@ -93,7 +93,7 @@ export class OpacSearchService {
     return this.http.get(`${this.urlrepo}?searchfield=${encodeURI(title)}&searchtype=${type}`, requestOptions).pipe(
       map(results => results),
       catchError(err => {
-        this.toastService.presentToast('No data available');
+        this.toastService.presentToast('No repository available');
         return throwError(err);
       })
     );

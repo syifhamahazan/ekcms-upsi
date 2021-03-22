@@ -96,6 +96,7 @@ rbrSearch(){
 
 // }
 PreviewFile(path){
+  console.log(path);
   // this.document.viewDocument(path, 'application/pdf', this.options);
   this.previewAnyFile.preview(path)
   .then((res: any) => console.log(res))
