@@ -8,7 +8,7 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'http://192.168.100.101:8081/'
+  apiUrl: 'http://library.kuis.edu.my:5003/'
   };
 
 /*

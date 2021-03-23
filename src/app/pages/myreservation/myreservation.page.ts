@@ -9,6 +9,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./myreservation.page.scss'],
 })
 export class MyreservationPage implements OnInit {
+  badRequest = false;
   public authUser: any;
   postData = {
     token: ''
@@ -41,7 +42,8 @@ export class MyreservationPage implements OnInit {
           this.reservationService.changeReservationData(res);
         },
         (error: any) => {
-          this.toastService.presentToast('Loading...');
+          this.badRequest = true;
+          this.toastService.presentToast('Please wait...');
         }
       );
 

@@ -9,6 +9,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./mysearchhistory.page.scss'],
 })
 export class MysearchhistoryPage implements OnInit {
+  badRequest = false;
   public authUser: any;
   postData = {
     token: ''
@@ -42,7 +43,8 @@ export class MysearchhistoryPage implements OnInit {
           this.searchhistService.changeSearchhistData(res);
         },
         (error: any) => {
-          this.toastService.presentToast('Loading...');
+          this.badRequest = true;
+          this.toastService.presentToast('Please wait...');
         }
       );
 

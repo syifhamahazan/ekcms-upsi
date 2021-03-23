@@ -15,7 +15,7 @@ export enum SearchType {
   providedIn: 'root'
 })
 export class SearchService {
-  url = 'http://192.168.100.101:8081/api/Material';
+  url = 'http://library.kuis.edu.my:5003/api/Material';
   constructor(private http: HttpClient) { }
 
 

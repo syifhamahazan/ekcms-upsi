@@ -1,4 +1,9 @@
 <div class="order-items" *ngFor="let lh of loanhistData">
+  <ion-card-content *ngIf="lh == 'No Data'">
+    <ion-item lines="none">
+      <ion-label>No data available.</ion-label>
+    </ion-item>
+  </ion-card-content>
   <ion-card mode="ios">
     <ion-card-content>
       <div class="address">

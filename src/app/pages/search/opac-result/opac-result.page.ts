@@ -34,6 +34,7 @@ export class OpacResultPage implements OnInit {
       this.opacSearchService.getDetails(cwId, this.authUser).subscribe(result => {
       this.information = result;
       console.log('Inside get book details');
+      console.log(this.information);
     });
     });
 
