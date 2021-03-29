@@ -22,9 +22,9 @@ export enum SearchType {
 })
 export class OpacSearchService {
 
-  url = 'http://library.kuis.edu.my:5003/api/material';
-  urlmetadata = 'http://library.kuis.edu.my:5003/api/Metadata';
-  urlrepo = 'http://library.kuis.edu.my:5003/api/Econtent';
+  url = 'http://pustaka.upsi.edu.my:5003/api/material';
+  urlmetadata = 'http://pustaka.upsi.edu.my:5003/api/Metadata';
+  urlrepo = 'http://pustaka.upsi.edu.myy:5003/api/Econtent';
 
   constructor(
     private http: HttpClient,

@@ -55,7 +55,7 @@ getProfile(token: any){
 }
 
 changePwd(){
-  Browser.open({ url: 'http://library.kuis.edu.my/Home/ForgotPassword' });
+  Browser.open({ url: 'https://pustaka.upsi.edu.my/Home/ForgotPassword' });
 }
 
 editprofile(){

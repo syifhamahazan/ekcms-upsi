@@ -7,7 +7,7 @@ import { HttpService } from './http.service';
   providedIn: 'root'
 })
 export class MywishlistService {
-  url = 'http://library.kuis.edu.my:5003/api/wishlist';
+  url = 'http://pustaka.upsi.edu.my:5003/api/wishlist';
 
   wishlistData$ = new BehaviorSubject<any>([]);
   constructor(private httpService: HttpService, private http: HttpClient) { }

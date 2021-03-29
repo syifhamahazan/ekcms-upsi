@@ -40,7 +40,7 @@ export enum Operators2 {
 })
 export class AdvSearchService {
 
-  url = 'http://library.kuis.edu.my:5003/api/AdvanceSearch';
+  url = 'http://pustaka.upsi.edu.my:5003/api/AdvanceSearch';
 
 
 
@@ -66,7 +66,7 @@ export class AdvSearchService {
     );
   }
   getAdvDetails(cwId, token) {
-    this.url = 'http://library.kuis.edu.my:5003/api/material';
+    this.url = 'http://pustaka.upsi.edu.my:5003/api/material';
     console.log('Get Adv Details');
     const headerDict = {
       'Access-Control-Allow-Origin': '*',
