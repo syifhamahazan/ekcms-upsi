@@ -182,6 +182,20 @@ export class HttpService {
             return this.http.get(`${url}?${body}`, { headers: apiHeaders });
             }
 
+            getEmails(serviceName: string, data: any) {
+              console.log('Emails Data is');
+              console.log(data);
+              const apiHeaders = {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
+                'Access-Control-Allow-Headers': 'Authorization',
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + data
+              };
+              const url = environment.apiUrl + serviceName;
+              console.log (url);
+              return this.http.get(url, { headers: apiHeaders });
+            }
 
 
 }

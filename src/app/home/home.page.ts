@@ -43,6 +43,9 @@ export class HomePage implements OnInit {
   mywishlist(){
     this.router.navigate(['./home/mywishlist']);
   }
+  myemails(){
+    this.router.navigate(['./home/myemails']);
+  }
   myloanhist(){
     this.router.navigate(['./home/myloanhistory']);
   }

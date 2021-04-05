@@ -39,6 +39,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/mywishlist/mywishlist.module').then( m => m.MywishlistPageModule)
       },
       {
+        path: 'myemails',
+        loadChildren: () => import('../pages/myemail/myemail.module').then( m => m.MyemailPageModule)
+      },
+      {
         path: 'myprofile',
         loadChildren: () => import('../pages/myprofile/myprofile.module').then( m => m.MyprofilePageModule)
       },
