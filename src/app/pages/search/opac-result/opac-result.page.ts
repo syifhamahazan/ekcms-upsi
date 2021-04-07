@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { OpacSearchService } from 'src/app/services/opac-search.service';
+import { ToastService } from 'src/app/services/toast.service';
 
 @Component({
   selector: 'app-opac-result',
@@ -10,7 +11,7 @@ import { OpacSearchService } from 'src/app/services/opac-search.service';
 })
 export class OpacResultPage implements OnInit {
   public authUser: any;
-
+  badRequest = false;
   postData = {
     token: ''
   };
@@ -21,7 +22,9 @@ export class OpacResultPage implements OnInit {
     private auth: AuthService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
-    private opacSearchService: OpacSearchService) { }
+    private opacSearchService: OpacSearchService,
+    private toastService: ToastService) { }
+
 
   ngOnInit() {
     // tslint:disable-next-line: deprecation
@@ -35,7 +38,12 @@ export class OpacResultPage implements OnInit {
       this.information = result;
       console.log('Inside get book details');
       console.log(this.information);
-    });
+    },
+        (error: any) => {
+          this.toastService.presentToast('Please wait...');
+          this.badRequest = true;
+          console.log('Bad request');
+        });
     });
 
 }

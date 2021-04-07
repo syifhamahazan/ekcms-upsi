@@ -12,6 +12,7 @@ import { ToastService } from '../services/toast.service';
 export class HomePage implements OnInit {
 
   profileData: any;
+  profileUser: any;
   public authUser: any;
   postData = {
     token: ''
@@ -32,9 +33,28 @@ export class HomePage implements OnInit {
     this.authService.userData$.subscribe((res: any) => {
       this.profileData = res;
       console.log('Get Profile');
+      this.getProfile(res);
     });
 
    }
+   getProfile(token: any){
+    // this.postData.token = this.authUser;
+    console.log('This is token');
+    console.log(token);
+    // tslint:disable-next-line: deprecation
+    this.profileService.profileData(token).subscribe(
+        (res: any) => {
+          console.log('Profile response');
+          console.log(res);
+          this.profileService.changeProfileData(res);
+          this.profileUser = res;
+        },
+        (error: any) => {
+          this.toastService.presentToast('Please wait...');
+        }
+      );
+  }
+
 
   searchAction(){
     this.router.navigate(['./home/search-result']);

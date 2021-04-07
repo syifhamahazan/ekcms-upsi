@@ -20,6 +20,9 @@
           <ion-select-option value="subject">Subject</ion-select-option>
           <ion-select-option value="callnumber">Call Number</ion-select-option>
           <ion-select-option value="series">Series</ion-select-option>
+          <ion-select-option value="summary">Summary</ion-select-option>
+          <ion-select-option value="language">Language</ion-select-option>
+          <ion-select-option value="dissertationnote">Dissertation Note</ion-select-option>
         </ion-select>
     
     </ion-item>
@@ -79,12 +82,12 @@
               <ion-item button *ngFor="let item of (results | async)" [routerLink]="['./', 'opac-result', item.citedworkId]">
                 <ion-thumbnail slot="start">
                   <img *ngIf="item.imagepath else null" src={{item.imagepath}} />                
-                  <img #null src="../../../assets/images/book5.jpg" />
+                  <!-- <img #null src="../../../assets/images/book5.jpg" /> -->
                 </ion-thumbnail>
            
                 <ion-label text-wrap>
-                  {{ item.title.substring(2) }}
-                  <h3>{{ item.author.substring(2) }}</h3>
+                  {{ item.title }}
+                  <h3>{{ item.author }}</h3>
                 </ion-label>
            
            

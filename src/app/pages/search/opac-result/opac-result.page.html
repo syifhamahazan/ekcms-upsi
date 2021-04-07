@@ -8,11 +8,12 @@
 </ion-header>
 
 <ion-content >
+  <div class="description">
   <div *ngFor="let inf of information ; first as isFirst">
-    <img *ngIf="isFirst else null" src={{inf.imagepath}} />
+    <img *ngIf="isFirst" src={{inf.imagepath}} />
   </div>
   
-  <img #null src="../../../assets/images/book5.jpg" />
+  <!-- <img #null src="../../../assets/images/book5.jpg" /> -->
   <div class="ion-padding-vertical">
     <div *ngFor="let inf of information ; first as isFirst">
     <h1 text-wrap class="item-name"*ngIf="isFirst">{{inf.title}}</h1>
@@ -25,13 +26,17 @@
     <hr>
   </div>
   
-  <div class="description">
+  <div>
     <h5>Description</h5>
     <div *ngFor="let inf of information ; first as isFirst">
-    <p *ngIf="isFirst">
-      {{inf.detail}}
-    </p>
+      <p *ngIf="isFirst">
+        {{inf.summary}}
+      </p>
   </div>
+  <p *ngIf="badRequest">
+    No description available.
+  </p>
+
 
   </div>
   <div class="review">
@@ -56,11 +61,11 @@
   <div class="seperator">
     <hr>
   </div>
- 
+</div>
 
 
 <ion-content padding>
-  
+  <ion-card>
   <ion-segment [(ngModel)]="segment">
     
     <ion-segment-button value="details">
@@ -69,9 +74,10 @@
     <ion-segment-button value="availability">
       Availability
     </ion-segment-button>
-    
+ 
 
   </ion-segment>
+</ion-card>
 
 
   <div [ngSwitch]="segment">
@@ -82,113 +88,144 @@
             <ion-col offset-4>
               <div>Author</div>
             </ion-col>
-            <ion-col></ion-col>
             <ion-col *ngFor="let inf of information ; first as isFirst">
               <div *ngIf="isFirst">{{inf.author}}</div>
             </ion-col>
-            <ion-col></ion-col>
           </ion-row>
-          
+
+          <ion-item-divider></ion-item-divider>
+
           <ion-row>
             <ion-col offset-4>
               <div>ISBN</div>
             </ion-col>
-            <ion-col></ion-col>
             <ion-col *ngFor="let inf of information ; first as isFirst">
-              <div *ngIf="isFirst">{{inf.isbn}}</div>
+              <div *ngIf="isFirst">{{inf.isbn.join(', ')}}</div>
             </ion-col>
-            <ion-col></ion-col>
           </ion-row>
 
+          <ion-item-divider></ion-item-divider>
+          
           <ion-row>
             <ion-col offset-4>
               <div>ISSN</div>
             </ion-col>
-            <ion-col></ion-col>
+
             <ion-col *ngFor="let inf of information ; first as isFirst">
               <div *ngIf="isFirst">{{inf.issn}}</div>
             </ion-col>
-            <ion-col></ion-col>
           </ion-row>
-  
-          <ion-row>
-            <ion-col offset-4>
-              <div>Publisher</div>
-            </ion-col>
-            <ion-col></ion-col>
-            <ion-col></ion-col>
-            <ion-col>
-              <div></div>
-            </ion-col>
-          </ion-row>
-  
+          <ion-item-divider></ion-item-divider>
+          
           <ion-row>
             <ion-col offset-4>
               <div>Call Number</div>
             </ion-col>
-            <ion-col></ion-col>
+
             <ion-col *ngFor="let inf of information ; first as isFirst">
               <div *ngIf="isFirst">{{inf.callNumber}}</div>
             </ion-col>
-            <ion-col></ion-col>
           </ion-row>
-  
+
+          <ion-item-divider></ion-item-divider>
+          
           <ion-row>
             <ion-col offset-4>
-              Physical Description    </ion-col>
-            <ion-col>
-              <ion-col></ion-col>
-              <ion-col></ion-col>  
-              <div></div>
+              <div>Publisher</div>
             </ion-col>
+
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.publisher}}</div>
+            </ion-col>  
           </ion-row>
-  
+          <ion-item-divider></ion-item-divider>
+          
+          <ion-row>
+            <ion-col offset-4>
+              <div>Publication</div>
+            </ion-col>
+
+              <ion-col *ngFor="let inf of information ; first as isFirst">
+                <div *ngIf="isFirst">{{inf.publication}}</div>
+              </ion-col>  
+          </ion-row>
+
+          <ion-item-divider></ion-item-divider>
+          
+          <ion-row>
+            <ion-col offset-4>
+              <div>Year</div>
+            </ion-col>
+
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.year}}</div>
+            </ion-col>  
+          </ion-row>
+
+
+          <ion-item-divider></ion-item-divider>
+          
+          <ion-row>
+            <ion-col offset-4>
+              <div>Physical Description</div> 
+            </ion-col>
+              <ion-col *ngFor="let inf of information ; first as isFirst">
+                <div *ngIf="isFirst">{{inf.physicalDesc}}</div>
+              </ion-col>  
+          </ion-row>
+
+          <ion-item-divider></ion-item-divider>
+          
           <ion-row>
             <ion-col offset-4>
               <div>Subject</div>
             </ion-col>
-            <ion-col></ion-col>
-            <ion-col></ion-col>
-            <ion-col>
-              <div></div>
+
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.subject}}</div>
             </ion-col>
           </ion-row>
-        </ion-grid>
-  
-        <ion-grid class="colors">
-  
+     
+
+
+          <ion-item-divider></ion-item-divider>
+          
           <ion-row>
             <ion-col offset-4>
               <div>Related Name</div>
             </ion-col>
-            <ion-col></ion-col>
-            <ion-col></ion-col>
-            <ion-col>
-              <div></div>
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.addedAuthor}}</div>
             </ion-col>
           </ion-row>
-  
+
+          <ion-item-divider></ion-item-divider>
+          
           <ion-row>
             <ion-col offset-4>
-              <div>URL Name</div>
+              <div>URL</div>
             </ion-col>
-            <ion-col></ion-col>
-            <ion-col></ion-col>
-            <ion-col>
-              <div></div>
+            <ion-col *ngFor="let inf of information ; first as isFirst">
+              <div *ngIf="isFirst">{{inf.url}}</div>
             </ion-col>
           </ion-row>
   
         </ion-grid>
       </ion-card-header>
-      <ion-card-content>
-        ...
-      </ion-card-content>
+      
     </ion-card>
   
     <ion-card *ngSwitchCase="'availability'">
+      <!-- <ion-card-content *ngIf="badRequest">
+        <ion-card-header>
+          <ion-row>
+            <div>No copies available at the moment. </div>
+          </ion-row>
+        </ion-card-header>
+      </ion-card-content> -->
       <ion-card-content *ngFor="let inf of information">
-        <ion-card-header *ngIf="inf.status == ('1' || '2' || '3' || '4' || '9')">
+        <!-- <ion-card-header *ngIf="inf.status == ('1' || '2' || '3' || '4' || '9')"> -->
+          <ion-card-header>
           <ion-grid class="sizes">
             <ion-row>
               <ion-col offset-4>
@@ -222,7 +259,17 @@
                 <div>{{inf.materialcategory}}</div>
               </ion-col>
             </ion-row>
-    
+            <ion-row>
+              <ion-col offset-4>
+                <div>Volume</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.volume}}</div>
+              </ion-col>
+            </ion-row>
+
             <ion-row>
               <ion-col offset-4>
                 <div>Copy</div>
@@ -233,7 +280,17 @@
                 <div>{{inf.copy}}</div>
               </ion-col>
             </ion-row>
-    
+            <ion-row>
+              <ion-col offset-4>
+                <div>Due Date</div>
+              </ion-col>
+              <ion-col></ion-col>
+              <ion-col></ion-col>
+              <ion-col>
+                <div>{{inf.duedate}}</div>
+              </ion-col>
+            </ion-row>
+   
             <ion-row>
               <ion-col offset-4>
                 <div>Status</div>
@@ -251,7 +308,8 @@
                 <div *ngIf="inf.status == 8 ">Missing</div>
                 <div *ngIf="inf.status == 9 ">Processing</div>
                 <div *ngIf="inf.status == 10 ">Inter-library</div>
-                <div *ngIf="inf.status == 13 ">Lost</div>             
+                <div *ngIf="inf.status == 13 ">Lost</div>
+                <div *ngIf="inf.status == 17 ">Dispose Missing</div>                          
               </ion-col>
             </ion-row>
 
@@ -259,6 +317,10 @@
           <div class="button-container">
             <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
           </div>
+          
+          <ion-item-divider></ion-item-divider>
+          
+
         </ion-card-header>
       </ion-card-content>
     </ion-card>

@@ -30,10 +30,12 @@
   <ion-menu side="start" menuId="main-menu" contentId="main">
     <ion-content>
       <div class="menu-header-bg"></div>
-      <div class="header-content">
-        <img src="../../assets/images/potrait.png" alt="" (click)="myprofile()">
+      <div class="header-content" *ngFor="let profile of profileUser; first as isFirst">
+        <img src="{{profile.patronImage}}" alt="" (click)="myprofile()">
+        <!-- <img #null src="../../assets/images/potrait.png" alt="" (click)="myprofile()"> -->
         <ion-label>
-          <h2>My Profile</h2>
+          <h2>{{profile.accessionNo}}</h2>
+          <p>{{profile.firstName}}</p>
         </ion-label>
       </div>
       

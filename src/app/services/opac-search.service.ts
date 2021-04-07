@@ -14,7 +14,10 @@ export enum SearchType {
   issn = 'issn',
   subject = 'subject',
   callnumber = 'callnumber',
-  series = 'series'
+  series = 'series',
+  summary = 'summary',
+  language = 'language',
+  dissertationnote = 'dissertationnote'
 }
 
 @Injectable({
