@@ -1,10 +1,10 @@
 <div class="order-items" *ngFor="let od of overdueData">
   <ion-card mode="ios">
-    <ion-card-content *ngIf="od == 'No Data'">
+    <!-- <ion-card-content *ngIf="od == 'No Data'">
       <ion-item lines="none">
         <ion-label>No data available.</ion-label>
       </ion-item>
-    </ion-card-content>
+    </ion-card-content> -->
     <ion-card-content>
       <div class="address">
         <ion-item lines="none">
@@ -37,7 +37,7 @@
         </ion-item>
         <ion-item lines="none">
           <ion-label>Fine</ion-label>
-          <ion-label slot="end" class="ion-text-right">RM {{od.amount}}</ion-label>
+          <ion-label slot="end" class="ion-text-right">{{od.amount| currency : 'RM'}}</ion-label>
         </ion-item>
       </div>
 

@@ -39,7 +39,7 @@
           <ion-item lines="none">
             <ion-label>Status</ion-label>
             <ion-label slot="end" class="ion-text-right"  *ngIf="loan.isOverdue == true">Overdue!</ion-label>
-            <ion-label slot="end" class="ion-text-right"  *ngIf="loan.isOverdue == false"></ion-label>
+            <ion-label slot="end" class="ion-text-right"  *ngIf="loan.isOverdue == false">{{loan.status}}</ion-label>
           </ion-item>
           <ion-item lines="none">
             <ion-label>Details</ion-label>

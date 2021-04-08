@@ -50,21 +50,21 @@ export class AppComponent {
     });
   }
 
-  backButtonEvent(){
-    this.platform.backButton.subscribeWithPriority(10, () => {
-      this.backButtonAlert();
-    });
-  }
+  // backButtonEvent(){
+  //   this.platform.backButton.subscribeWithPriority(10, () => {
+  //     this.backButtonAlert();
+  //   });
+  // }
 
-  async backButtonAlert(){
-      const alert = await this.alertController.create({
-        header: 'Alert',
-        subHeader: 'Subtitle',
-        message: 'This is an alert message.',
-        buttons: ['OK']
-      });
+  // async backButtonAlert(){
+  //     const alert = await this.alertController.create({
+  //       header: 'Alert',
+  //       subHeader: 'Subtitle',
+  //       message: 'This is an alert message.',
+  //       buttons: ['OK']
+  //     });
 
-      await alert.present();
+  //     await alert.present();
 
-  }
+  // }
 }
