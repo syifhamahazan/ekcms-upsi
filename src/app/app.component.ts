@@ -22,7 +22,7 @@ export class AppComponent {
     private loadingCtrl: LoadingController
   ) {
     this.initializeApp();
-    this.backButtonEvent();
+    // this.backButtonEvent();
   }
 
   private loading;
