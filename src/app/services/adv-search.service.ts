@@ -4,23 +4,29 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 export enum SearchType1 {
-  title = 'title',
-  author = 'author',
-  isbn = 'isbn',
-  issn = 'issn',
-  subject = 'subject',
+  title = 'Title',
+  author = 'Author',
+  isbn = 'Isbn',
+  issn = 'Issn',
+  subject = 'Subject',
   call_number = 'call number',
-  series = 'series'
+  series = 'Series',
+  summary = 'Summary',
+  language = 'Language',
+  dissertationnote = 'DissertationNote'
 }
 
 export enum SearchType2 {
-  title = 'title',
-  author = 'author',
+  title = 'Title',
+  author = 'Author',
   isbn = 'isbn',
   issn = 'issn',
   subject = 'subject',
   call_number = 'call number',
-  series = 'series'
+  series = 'series',
+  summary = 'Summary',
+  language = 'Language',
+  dissertationnote = 'DissertationNote'
 }
 
 export enum Operators1 {
@@ -61,12 +67,12 @@ export class AdvSearchService {
       headers: new HttpHeaders(headerDict)
     };
     // tslint:disable-next-line:max-line-length
-    return this.http.get(`${this.url}/${type1},${encodeURI(title1)},${operators1};${type2},${encodeURI(title2)},${operators2};`, requestOptions).pipe(
+    return this.http.get(`${this.url}${type1},${encodeURI(title1)},${operators1};${type2},${encodeURI(title2)},${operators2};`, requestOptions).pipe(
       map(results => results)
     );
   }
   getAdvDetails(cwId, token) {
-    this.url = 'http://pustaka.upsi.edu.my:5003/api/material';
+    this.url = 'http://pustaka.upsi.edu.my:5003/api/AdvanceSearch?searchtext=';
     console.log('Get Adv Details');
     const headerDict = {
       'Access-Control-Allow-Origin': '*',

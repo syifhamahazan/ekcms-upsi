@@ -6,18 +6,23 @@
   <img src="../../../assets/images/upsi-logo.png"/>
   <h5 class="ion-text-center" color="ekcms">ADVANCE SEARCH</h5>
 </div>
-  <form id="form">
+<div id="formContainer">
+  <form class="theForm">
 
     <ion-item>
       <ion-label position="floating">Filter By</ion-label>
         <ion-select  [(ngModel)]="type1" (ionChange)="searchChanged($event)">
-          <ion-select-option value="title">Title</ion-select-option>
-          <ion-select-option value="author">Author</ion-select-option>
+          <ion-select-option value="Title">Title</ion-select-option>
+          <ion-select-option value="Author">Author</ion-select-option>
           <ion-select-option value="ISBN">ISBN</ion-select-option>
           <ion-select-option value="ISSN">ISSN</ion-select-option>
-          <ion-select-option value="subject">Subject</ion-select-option>
-          <ion-select-option value="sall Number">Call Number</ion-select-option>
-          <ion-select-option value="series">Series</ion-select-option>
+          <ion-select-option value="Subject">Subject</ion-select-option>
+          <ion-select-option value="CallNumber">Call Number</ion-select-option>
+          <ion-select-option value="Series">Series</ion-select-option>
+          <ion-select-option value="Summary">Summary</ion-select-option>
+          <ion-select-option value="Language">Language</ion-select-option>
+          <ion-select-option value="DissertationNote">Dissertation Note</ion-select-option>
+
         </ion-select>
     </ion-item>
 
@@ -28,7 +33,6 @@
       <ion-row *ngFor="let row of rows">
 
         <ion-col>
-          {{ row?.firstCol }}
           <ion-item class="operator-box">
             <ion-label position="floating">Operator</ion-label>
               <ion-select  [(ngModel)]="operators1" (ionChange)="searchChanged($event)">
@@ -40,17 +44,16 @@
         </ion-col>
 
         <ion-col>
-          {{ row?.secondCol }}
           <ion-item>
             <ion-label position="floating">Filter By</ion-label>
             <ion-select  [(ngModel)]="type2" (ionChange)="searchChanged($event)">
-              <ion-select-option value="title">Title</ion-select-option>
-                <ion-select-option value="author">Author</ion-select-option>
+              <ion-select-option value="Title">Title</ion-select-option>
+                <ion-select-option value="Author">Author</ion-select-option>
                 <ion-select-option value="ISBN">ISBN</ion-select-option>
                 <ion-select-option value="ISSN">ISSN</ion-select-option>
-                <ion-select-option value="subject">Subject</ion-select-option>
-                <ion-select-option value="call Number">Call Number</ion-select-option>
-                <ion-select-option value="series">Series</ion-select-option>
+                <ion-select-option value="Subject">Subject</ion-select-option>
+                <ion-select-option value="CallNumber">Call Number</ion-select-option>
+                <ion-select-option value="Series">Series</ion-select-option>
               </ion-select>
           </ion-item>
         </ion-col>
@@ -78,19 +81,21 @@
        </ion-row>
     </ion-grid>
   </form>
+  </div>
 
   <ion-list>
  
     <ion-item button *ngFor="let item of (results | async)" [routerLink]="['./', 'opac-result', item.citedworkId]">
       <ion-thumbnail slot="start">
-        <img src="../../../assets/images/book5.jpg">
+        <img *ngIf="item.imagepath else null" src={{item.imagepath}} />                
+        <!-- <img src="../../../assets/images/book5.jpg"> -->
       </ion-thumbnail>
  
       <ion-label text-wrap>
-        {{ item.title.substring(2) }}
-        <h3>{{ item.author.substring(2) }}</h3>
+        {{ item.title }}
+        <h3>{{ item.author }}</h3>
       </ion-label>
- 
+
  
     </ion-item>
  
