@@ -71,7 +71,7 @@ searchAction(){
  }
 
 advSearch(){
-  this.router.navigate(['./home/maintenance']);
+  this.router.navigate(['./home/advance-search']);
 }
 
 rbrSearch(){

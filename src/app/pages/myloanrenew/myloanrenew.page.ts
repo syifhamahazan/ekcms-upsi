@@ -44,7 +44,6 @@ export class MyloanrenewPage implements OnInit {
         },
         (error: any) => {
           this.badRequest = true;
-          this.toastService.presentToast('Please wait...');
         }
       );
 

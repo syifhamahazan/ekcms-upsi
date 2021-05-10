@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { SearchhistService } from 'src/app/services/searchhist.service';
 import { ToastService } from 'src/app/services/toast.service';
@@ -9,6 +9,7 @@ import { ToastService } from 'src/app/services/toast.service';
   styleUrls: ['./mysearchhistory.page.scss'],
 })
 export class MysearchhistoryPage implements OnInit {
+  @Input() loginUser: any;
   badRequest = false;
   public authUser: any;
   postData = {
@@ -44,7 +45,7 @@ export class MysearchhistoryPage implements OnInit {
         },
         (error: any) => {
           this.badRequest = true;
-          this.toastService.presentToast('Please wait...');
+          // this.toastService.presentToast('Please wait...');
         }
       );
 

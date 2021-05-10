@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AdvSearchService, Operators1, Operators2, Operators3, Operators4, SearchType1, SearchType2, SearchType3, SearchType4, SearchType5 } from 'src/app/services/adv-search.service';
+import { AdvSearchService, Operators1, Operators2, Operators3,
+          Operators4, SearchType1, SearchType2, SearchType3, SearchType4, SearchType5 } from 'src/app/services/adv-search.service';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({

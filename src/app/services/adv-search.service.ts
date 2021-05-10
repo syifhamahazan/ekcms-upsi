@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 
 export enum SearchType1 {
   title = 'Title',
@@ -97,7 +98,7 @@ export enum Operators4 {
 })
 export class AdvSearchService {
 
-  url = 'http://pustaka.upsi.edu.my:5003/api/AdvanceSearch?searchtext=';
+  url =  environment.apiUrl + '/api/AdvanceSearch/GetMaterialsAdvance?searchtext=';
 
 
 
@@ -123,7 +124,7 @@ export class AdvSearchService {
   }
 
   searchData2(title1: string, type1: SearchType1, operators1: string,
-              title2: string, type2: SearchType2, operators2: string, 
+              title2: string, type2: SearchType2, operators2: string,
               title3: string, type3: string, operators3: string, token): Observable<any> {
 
       const headerDict = {
@@ -167,7 +168,7 @@ export class AdvSearchService {
   }
 
   getAdvDetails(cwId, token) {
-    this.url = 'http://pustaka.upsi.edu.my:5003/api/AdvanceSearch?searchtext=';
+    this.url =  environment.apiUrl + '/api/AdvanceSearch/GetMaterialsAdvance?searchtext=';
     console.log('URL ADVANCE' + this.url);
     const headerDict = {
       'Access-Control-Allow-Origin': '*',

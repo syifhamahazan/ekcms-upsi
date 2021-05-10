@@ -48,7 +48,7 @@ export class MywishlistPage implements OnInit {
           this.wishlistService.changeWishlistData(res);
         },
         (error: any) => {
-          this.toastService.presentToast('Please wait...');
+          // this.toastService.presentToast('Please wait...');
           this.badRequest = true;
           console.log('Bad request');
         }

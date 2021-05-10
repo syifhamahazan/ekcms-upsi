@@ -10,7 +10,7 @@
   <form class="theForm">
 
     <ion-item>
-      <ion-label position="floating">Filter By 1</ion-label>
+      <ion-label position="floating">Filter by ...</ion-label>
         <ion-select  [(ngModel)]="type1" (ionChange)="searchChanged($event)">
           <ion-select-option value="Title">Title</ion-select-option>
           <ion-select-option value="Author">Author</ion-select-option>
@@ -34,7 +34,7 @@
 
         <ion-col>
           <ion-item class="operator-box">
-            <ion-label position="floating">Operator {{i+1}}</ion-label>
+            <ion-label position="floating">AND | OR | NOT</ion-label>
               <!-- <ion-select  [(ngModel)]="operators1" (ionChange)="searchChanged($event)"> -->
               <ion-select  *ngIf= "i == 0"  [(ngModel)]="operators1" (ionChange)="searchChanged($event)">
                 <ion-select-option value="AND">AND</ion-select-option>
@@ -62,7 +62,7 @@
 
         <ion-col>
           <ion-item>
-            <ion-label position="floating">Filter By {{i+2}} </ion-label>
+            <ion-label position="floating">Filter by ...</ion-label>
             <ion-select   *ngIf= "i == 0" [(ngModel)]="type2" (ionChange)="searchChanged($event)">
               <ion-select-option value="Title">Title</ion-select-option>
                 <ion-select-option value="Author">Author</ion-select-option>

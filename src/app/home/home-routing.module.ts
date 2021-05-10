@@ -83,6 +83,10 @@ const routes: Routes = [
         loadChildren: () => import('../pages/maintenance/maintenance.module').then( m => m.MaintenancePageModule)
       },
       {
+        path: 'about',
+        loadChildren: () => import('../pages/about/about.module').then( m => m.AboutPageModule)
+      },
+      {
        path: 'logout',
        loadChildren: () => import('../pages/logout/logout.module').then( m => m.LogoutPageModule)
      }

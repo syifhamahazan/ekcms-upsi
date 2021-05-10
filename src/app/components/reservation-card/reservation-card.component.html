@@ -1,16 +1,5 @@
-<div class="order-items" *ngFor="let rs of reservationData">
-  <ion-card-content *ngIf="badRequest">
-    <ion-item lines="none">
-      <ion-label>No data available.</ion-label>
-    </ion-item>
-  </ion-card-content>
-
+<div class="order-items" *ngFor="let rs of reservationData; let i=index ;">
   <ion-card mode="ios">
-    <!-- <ion-card-content *ngIf="rs == 'No Data'">
-      <ion-item lines="none">
-        <ion-label>No data available.</ion-label>
-      </ion-item>
-    </ion-card-content> -->
     <ion-card-content>
       <div class="address">
         <ion-item lines="none">
@@ -35,7 +24,7 @@
         </ion-item>
       </div>
 
-        <ion-button expand="block" color="warning">Cancel</ion-button>
+        <ion-button expand="block" color="warning" (click)="cancelReserve(rs, i)">Cancel</ion-button>
       
     </ion-card-content>
   </ion-card>

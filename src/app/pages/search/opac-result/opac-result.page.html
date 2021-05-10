@@ -98,7 +98,7 @@
               <div>ISBN</div>
             </ion-col>
             <ion-col *ngFor="let inf of information ; first as isFirst">
-              <div *ngIf="isFirst">{{inf.isbn.join(', ')}}</div>
+              <ion-label *ngIf="isFirst">{{inf.isbn.join(', \n  ')}}</ion-label>
             </ion-col>
           </ion-row>
 
@@ -221,7 +221,7 @@
           </ion-row>
         </ion-card-header>
       </ion-card-content> -->
-      <ion-card-content *ngFor="let inf of information">
+      <ion-card-content *ngFor="let inf of information; let i=index ;">
         <!-- <ion-card-header *ngIf="inf.status == ('1' || '2' || '3' || '4' || '9')"> -->
           <ion-card-header>
           <ion-grid class="sizes">
@@ -312,9 +312,10 @@
             </ion-row>
 
           </ion-grid>
-          <div class="button-container">
-            <ion-button expand="block" (click)="reserveAction()" class="main-button">Reserve</ion-button>
-          </div>
+           <!-- Disable for 010 and 011 -->
+          <!-- <div class="button-container">
+            <ion-button *ngIf="inf.status == 1 " expand="block" (click)="reserveAction(inf, i)" class="main-button">Reserve</ion-button>
+          </div> -->
           
           <ion-item-divider></ion-item-divider>
           

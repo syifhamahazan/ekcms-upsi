@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { throwError } from 'rxjs';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment.prod';
 import { HttpService } from './http.service';
 import { ToastService } from './toast.service';
 
@@ -25,9 +26,10 @@ export enum SearchType {
 })
 export class OpacSearchService {
 
-  url = 'http://pustaka.upsi.edu.my:5003/api/material';
-  urlmetadata = 'http://pustaka.upsi.edu.my:5003/api/Metadata';
-  urlrepo = 'http://pustaka.upsi.edu.myy:5003/api/Econtent';
+  url = environment.apiUrl + '/api/Material/GetMaterialsById';
+  opacurl =  environment.apiUrl + '/api/material/GetMaterialDetails';
+  urlmetadata =  environment.apiUrl + '/api/Metadata/GetMaterialsById';
+  urlrepo =  environment.apiUrl + '/api/Econtent/GetMaterialsById';
 
   constructor(
     private http: HttpClient,
@@ -116,5 +118,5 @@ export class OpacSearchService {
     const requestOptions = {
       headers: new HttpHeaders(headerDict)
     };
-    return this.http.get(`${this.url}?CitedworkId=${encodeURI(cwId)}`, requestOptions);
+    return this.http.get(`${this.opacurl}?CitedworkId=${encodeURI(cwId)}`, requestOptions);
   }}

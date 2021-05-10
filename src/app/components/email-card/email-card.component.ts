@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MyemailsService } from 'src/app/services/myemails.service';
 
 @Component({
@@ -7,7 +7,9 @@ import { MyemailsService } from 'src/app/services/myemails.service';
   styleUrls: ['./email-card.component.scss'],
 })
 export class EmailCardComponent implements OnInit {
+  @Input() loginUser: any;
   emailsData: any;
+  badRequest = false;
 
   constructor(private myemailsService: MyemailsService) { }
 
